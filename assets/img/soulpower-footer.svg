@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 68" style="enable-background:new 0 0 320 68;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	g:target { display: inline }
+</style>
+<g id="powerO">
+<path class="st0 powerO" d="M180,0h-4h-8.8c-2.9,0-5.2,2.3-5.2,5.2V14v22v10c0,2.2,1.8,4,4,4h10h4h10c2.2,0,4-1.8,4-4V36V14V5.2
+	c0-2.9-2.3-5.2-5.2-5.2H180z M178,36L178,36c-1.1,0-2-0.9-2-2V16c0-1.1,0.9-2,2-2l0,0c1.1,0,2,0.9,2,2v18C180,35.1,179.1,36,178,36z
+	"/>
+</g>
+<g>
+<path class="st0 soulL" d="M108,68V4c0-2.2,1.8-4,4-4h10v64c0,2.2-1.8,4-4,4H108z"/>
+</g>
+<g>
+<path class="st0 soulS" d="M18,0h-4H4C1.8,0,0,1.8,0,4v10v13v5v5c0,2.2,1.8,4,4,4h14v11c0,1.1-0.9,2-2,2h0c-1.1,0-2-0.9-2-2v-7H0v9v10
+	c0,2.2,1.8,4,4,4h10h14c2.2,0,4-1.8,4-4v0V54V41v-9v-1c0-2.2-1.8-4-4-4H14V16c0-1.1,0.9-2,2-2h0c1.1,0,2,0.9,2,2v7h14v-9V4
+	c0-2.2-1.8-4-4-4H18z"/>
+</g>
+<path class="st0 soulO" d="M54,18h-4h-8.8c-2.9,0-5.2,2.3-5.2,5.2V32v22v10c0,2.2,1.8,4,4,4h10h4h10c2.2,0,4-1.8,4-4V54V32v-8.8
+	c0-2.9-2.3-5.2-5.2-5.2H54z M52,54L52,54c-1.1,0-2-0.9-2-2V34c0-1.1,0.9-2,2-2h0c1.1,0,2,0.9,2,2v18C54,53.1,53.1,54,52,54z"/>
+<path class="st0 powerP" d="M144,0h-4h-14v14v22v14v18h14V50h4h10c2.2,0,4-1.8,4-4V36V14V4c0-2.2-1.8-4-4-4H144z M142,36h-2V14h2
+	c1.1,0,2,0.9,2,2v18C144,35.1,143.1,36,142,36z"/>
+<path class="st0 soulU" d="M90,18v34c0,1.1-0.9,2-2,2h0c-1.1,0-2-0.9-2-2V18H72v36v10c0,2.2,1.8,4,4,4h10h4h10c2.2,0,4-1.8,4-4V54V18H90z"
+	/>
+<path class="st0 powerE" d="M284,14V0h-18h-10c-2.2,0-4,1.8-4,4v10v4v14v4v10c0,2.2,1.8,4,4,4h10h18V36h-18v-4h18V18h-18v-4H284z"/>
+<path class="st0 powerW" d="M234,4v48c0,1.1-0.9,2-2,2h-2V2c0-1.1-0.9-2-2-2h-10c-1.1,0-2,0.9-2,2v52h-2c-1.1,0-2-0.9-2-2V4
+	c0-2.2-1.8-4-4-4h-10v54v6c0,4.4,3.6,8,8,8h6h4h14h4h6c4.4,0,8-3.6,8-8v-6V0h-10C235.8,0,234,1.8,234,4z"/>
+<path class="st0 powerR" d="M316,0h-10h-4h-14v14v22v14v18h14V50h4v14c0,2.2,1.8,4,4,4h10V50v-3c0-2.2-1.8-4-4-4c2.2,0,4-1.8,4-4v-3V14V4
+	C320,1.8,318.2,0,316,0z M306,36h-4V14h2c1.1,0,2,0.9,2,2V36z"/>
+<path class="st0 soulSyllable" d="M100,14H36V4c0-2.2,1.8-4,4-4h64v10C104,12.2,102.2,14,100,14z"/>
+<path class="st0 powerSyllableOne" d="M191,68h-47V58c0-2.2,1.8-4,4-4h47v10C195,66.2,193.2,68,191,68z"/>
+<path class="st0 powerSyllableTwo" d="M280,68h-28V58c0-2.2,1.8-4,4-4h28v10C284,66.2,282.2,68,280,68z"/>
+</svg>
