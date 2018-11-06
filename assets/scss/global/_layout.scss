@@ -1,3 +1,8 @@
+body {
+    background-color: $secondary-color;
+}
+
+
 .masthead {
   width: 100%;
   // background: $secondary-color;
@@ -17,7 +22,144 @@
     max-width: 320px;
     height: auto;
   }
+
+  .masthead-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
 }
+
+// Vinyl
+
+.vinyl {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.groove-style-one {
+  fill: none;
+  stroke: $primary-color;
+  stroke-width: 1;
+}
+
+.groove-style-two {
+  fill: none;
+  stroke: #ffe01b;
+  stroke-width: 1;
+}
+
+.vinyl-lable {
+  fill: #4ED8D9;
+}
+
+.vinyl-hole {
+  fill: $secondary-color;
+}
+
+
+
+// SoulFro
+// need to clean
+
+#soulfro {
+  position: absolute;
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.hair-style-one {
+  fill: $primary-color;
+  stroke: $secondary-color;
+  stroke-width: 5;
+}
+
+.hair-style-two {
+  fill: #ef1373;
+  stroke: $secondary-color;
+  stroke-width: 5;
+}
+
+#hair1 {
+  fill: #ffe01b;
+}
+
+.face-one {
+  fill: $secondary-color;
+}
+
+.st0 {
+  fill: #FFE01B;
+  stroke: #0B1632;
+}
+
+.st1 {
+  fill: #4ED8D9;
+  stroke: #0B1632;
+}
+
+.st2 {
+  fill: none;
+  stroke: #0B1632;
+  stroke-width: 2;
+}
+
+.st3 {
+  fill: none;
+  stroke: #0B1632;
+  stroke-width: 2;
+}
+
+.st4 {
+  fill: none;
+  stroke: #0B1632;
+}
+
+.headphonewire-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  max-width: 100vh;
+  z-index: -2;
+}
+
+.headphonewire {
+  width: 0.5%;
+  height: 50vh;
+  display: block;
+  background: #ffe01b;
+  margin-top: 50vh;
+  margin-left: 81%;
+}
+
+.headphone-jack-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-width: 100%;
+  z-index: -2;
+}
+
+.headphone-jack {
+  width: 100%;
+  height: 100%;
+}
+// need to clean
+
+
+
+
+
+
 
 .section-primary {
   color: $white;
