@@ -3,7 +3,6 @@
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 // import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'; // comment out on biuld
-
 // init controller
 var controller = new ScrollMagic.Controller();
 
