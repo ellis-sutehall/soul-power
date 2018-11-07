@@ -9,12 +9,21 @@ $app-dashboard-top-nav-height: rem-calc(55);
 // Main Nav Styles
 .title-bar {
   height: 70px;
-  justify-content: space-between;
   background: transparent;
-  position: relative;
-  z-index: 100000;
+  position: absolute;
+  width: 100%;
+  z-index: 100000000;
+  .title-bar-inner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   div, button {
     z-index: 10000;
+  }
+  button {
+    align-self: center;
   }
 }
 .title-bar-bg-js {
@@ -26,7 +35,7 @@ $app-dashboard-top-nav-height: rem-calc(55);
   position: absolute;
   right: 0;
   width: 100vw;
-  height: calc( 100vh - 70px );
+  height: 100vh;
   text-transform: uppercase;
   z-index: 100000;
   .top-bar-left, .top-bar-right {

@@ -776,18 +776,28 @@ if (ourSoundPage) {
 
 if (ourSoundPage) {
 
-
-
-
-
-
-
-
   var rotateVinyl,
     playBtn = document.getElementById("play"),
-    pauseBtn = document.getElementById("pause"),
-    playPauseBtn = document.getElementById("test");
+    pauseBtn = document.getElementById("pause");
 
+
+    playBtn.addEventListener('click', function() {
+      if( playBtn.classList.contains('show') ) {
+        playBtn.classList.remove('show');
+        playBtn.classList.add('hide');
+        pauseBtn.classList.remove('hide');
+        pauseBtn.classList.add('show');
+      }
+    });
+
+    pauseBtn.addEventListener('click', function() {
+      if( playBtn.classList.contains('hide') ) {
+        playBtn.classList.remove('hide');
+        playBtn.classList.add('show');
+        pauseBtn.classList.remove('show');
+        pauseBtn.classList.add('hide');
+      }
+    });
 
   rotateVinyl = new TweenMax.to('.vinyl', 8.0, {
     rotation: "360",
@@ -815,15 +825,15 @@ if (ourSoundPage) {
   };
 
 
-/*
-  play.onclick = function() {
-    rotateVinyl.paused(!rotateVinyl.paused());
-    TweenLite.to(rotateVinyl, 2, {
-      timeScale: 1,
-    });
-    play.innerHTML = rotateVinyl.paused() ? "Play" : "Pause"
-  };
-*/
+
+  // play.onclick = function() {
+  //   rotateVinyl.paused(!rotateVinyl.paused());
+  //   TweenLite.to(rotateVinyl, 2, {
+  //     timeScale: 1,
+  //   });
+  //   play.innerHTML = rotateVinyl.paused() ? "Play" : "Pause"
+  // };
+
 
 }
 

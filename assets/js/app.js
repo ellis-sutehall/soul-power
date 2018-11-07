@@ -2,7 +2,6 @@ import $ from 'jquery';
 import whatInput from 'what-input';
 
 window.$ = $;
-
 // Import custom animation (greenSock)
 import { TimelineMax, TweenMax, Linear } from 'gsap';
 // remaining JS code...
