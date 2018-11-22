@@ -47,12 +47,18 @@ meta-title: Our Sound
     </div>
     <!-- masthead centered content top -->
     <div class="cell shrink text-center">
-      <h7 id="quote">OUR SOUND</h7>
-      <p>Treat yourself to a taste of 'SoulPower'.</p>
+      <h6 class="header-text">
 
-      <a id="play" class="button show" href="#">Play</a>
+        Our Sound
 
-      <a id="pause" class="button hide" href="#">Pause</a>
+      </h6>
+      <p>
+        <!-- Treat yourself to a taste of 'SoulPower'. -->
+      </p>
+
+      <a id="playHeader" class="button show" href="#">Play</a>
+
+      <a id="pauseHeader" class="button hide" href="#">Pause</a>
 
     </div>
     <!-- masthead padding  bottom -->
@@ -65,21 +71,409 @@ meta-title: Our Sound
 </div>
 
 
+
+
+
 <div class="section-secondary">
-  <div class="grid-container grid-y grid-padding-y min-height-vh">
+  <div class="container grid-y min-height-vh">
     <!-- masthead padding  top -->
     <div class="cell auto">
     </div>
-
     <!-- masthead centered content top -->
     <div class="cell shrink text-center">
-      <p class="info-text"><small>Feel The 'Power'</small></p>
-      <div class="devide-secondary"></div>
-      <h1>Some of the things they're saying about us!</h1>
-      <p>Experience Motown treasures from artists such as Stevie Wonder, the funky explosive intensity of James Brown, and the superb melodic classics from Stax label artists such as Wilson Picket, Sam and Dave and the legendary Otis Redding. If you
-        liked the Blues Brothers, if you liked the Commitments you’ll love Soul Power. Soul Powers’ impressive CV includes working in music venues, clubs, weddings, parties, festivals, conferences, corporate entertainment and all kind of events both
-        in the UK and abroad. The basic line up consists of Vocals, Guitar, Keys, Bass, Drums, Trumpet, Trombone and Sax. The band can be augmented with Female lead vocals and or female backing vocals and also a larger brass section including the
-        authentic sound of a baritone sax.</p>
+      <div class="grid-container">
+        <p class="info-text"><small>Dukebox</small></p>
+        <h1>The Sound of SoulPower</h1>
+        <div class="devide-secondary"></div>
+        <p>Soul Power is an, energetic and exiting eight to twelve pice band - ideal entertainment for events of all kinds. A dynamic collaboration of talented musicians combining the evolutionary beats of sixties Soul music, 70s Funk and bringing
+          it bang up to date for the 21st Century.</p>
+      </div>
+
+
+      <!-- start audio player -->
+      <audio src="" id="audioPlayer">
+          Sorry, your browser doesn't support html5!
+      </audio>
+
+
+      <!-- create playlist -->
+      <ul style="margin: 0px" id="playlist">
+
+        <!-- carousel of albums -->
+        <div class="album-slick">
+
+          <li class="current-song album-cover">
+            <a href="../../assets/media/SignedSealedDelivered.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>I'm Yours!</p>
+                    <h2>Stevie Wonder</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Signed, Sealed, Delivered</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+          <li class="album-cover">
+            <a href="../../assets/media/6345789.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>634-5789</p>
+                    <h2>Wilson Pickett</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>The Exciting Wilson Pickett</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+          <li class="album-cover">
+            <a href="../../assets/media/HoldOnImComing.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Hold On, I'm Comin'</p>
+                    <h2>Sam & Dave</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Hold On, I'm Comin'</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+          <li class="album-cover">
+            <a href="../../assets/media/TheMidnightHour.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>The Midnight Hour</p>
+                    <h2>Wilson Pickett</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>The Exciting Wilson Pickett</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+          <li class="album-cover">
+            <a href="../../assets/media/SweetSoulMusic.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Sweet Soul Music</p>
+                    <h2>Arthur Conley</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Sweet Soul Music</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/MustangSally.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Mustang Sally</p>
+                    <h2>Wilson Pickett</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>The Wicked Pickett</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/MyGirl.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>My Girl</p>
+                    <h2>Smokey Robinson</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Time Out for Smokey Robinson & The Miracles</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/HardToHandle.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Hard To Handle</p>
+                    <h2>Otis Redding</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>The Immortal Otis Redding</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/JBrownMix.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Soul Power 74</p>
+                    <h2>James Brown</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Instrumental</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/FunkyMusic.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>Play That Funky Music</p>
+                    <h2>Wild Cherry</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Wild Cherry</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+          <li class="album-cover">
+            <a href="../../assets/media/IWish.mp3">
+            <div class="album-wrapper">
+              <!-- album artwork -->
+              <div class="album-cover-artwork">
+                <progress id="seekbar" value="0" max="1"></progress>
+                <div class="album-cover-artwork-highlight">
+                </div>
+              </div>
+              <!-- album info -->
+              <div class="album-info">
+                <div class="grid-container grid-y cover-info text-center">
+                  <!-- padding  top -->
+                  <div class="cell auto">
+                  </div>
+                  <!-- album info -->
+                  <div class="cell shrink">
+                    <p>I Wish</p>
+                    <h2>Stevie Wonder</h2>
+                  </div>
+                  <!-- padding  bottom -->
+                  <div class="cell auto"></div>
+                  <div class="cell shrink">
+                    <p><small>Songs in the Key of Life</small>
+                  </div>
+                </div>
+              </div>
+              <!-- album buttons -->
+            </div>
+            </a>
+          </li>
+
+
+
+
+        </div>
+      </ul>
+
+      <!-- Need Styling -->
+      <button class="button round" onclick="document.getElementById('audioPlayer').volume+=0.1">volume up</button>
+      <button class="button round" onclick="document.getElementById('audioPlayer').volume-=0.1">volume down</button>
+      <button class="button round" onclick="document.getElementById('audioPlayer').play()">play</button>
+      <button class="button round" onclick="document.getElementById('audioPlayer').pause()">pause</button>
+
+
     </div>
 
     <!-- masthead padding  bottom -->

@@ -42,9 +42,9 @@ if (experiencePage) {
       triggerHook: 100,
     })
     .setTween(count)
-    .addIndicators({
-      name: 'count',
-    })
+    //.addIndicators({
+    //  name: 'count',
+    //})
     .addTo(controller);
 
   // Count for Years Experience End
@@ -777,27 +777,27 @@ if (ourSoundPage) {
 if (ourSoundPage) {
 
   var rotateVinyl,
-    playBtn = document.getElementById("play"),
-    pauseBtn = document.getElementById("pause");
+    playBtn = document.getElementById("playHeader"),
+    pauseBtn = document.getElementById("pauseHeader");
 
 
-    playBtn.addEventListener('click', function() {
-      if( playBtn.classList.contains('show') ) {
-        playBtn.classList.remove('show');
-        playBtn.classList.add('hide');
-        pauseBtn.classList.remove('hide');
-        pauseBtn.classList.add('show');
-      }
-    });
+  playBtn.addEventListener('click', function() {
+    if (playBtn.classList.contains('show')) {
+      playBtn.classList.remove('show');
+      playBtn.classList.add('hide');
+      pauseBtn.classList.remove('hide');
+      pauseBtn.classList.add('show');
+    }
+  });
 
-    pauseBtn.addEventListener('click', function() {
-      if( playBtn.classList.contains('hide') ) {
-        playBtn.classList.remove('hide');
-        playBtn.classList.add('show');
-        pauseBtn.classList.remove('show');
-        pauseBtn.classList.add('hide');
-      }
-    });
+  pauseBtn.addEventListener('click', function() {
+    if (playBtn.classList.contains('hide')) {
+      playBtn.classList.remove('hide');
+      playBtn.classList.add('show');
+      pauseBtn.classList.remove('show');
+      pauseBtn.classList.add('hide');
+    }
+  });
 
   rotateVinyl = new TweenMax.to('.vinyl', 8.0, {
     rotation: "360",
@@ -807,7 +807,7 @@ if (ourSoundPage) {
   }).timeScale(0);
 
 
-  play.onclick = function() {
+  playHeader.onclick = function() {
     rotateVinyl.play();
     TweenLite.to(rotateVinyl, 2, {
       timeScale: 1,
@@ -815,7 +815,7 @@ if (ourSoundPage) {
   };
 
 
-  pause.onclick = function() {
+  pauseHeader.onclick = function() {
     TweenLite.to(rotateVinyl, 2, {
       timeScale: 0,
       onComplete: function() {
@@ -838,3 +838,67 @@ if (ourSoundPage) {
 }
 
 // Vinyle Animation End
+
+// Force album height = to width
+
+if (ourSoundPage) {
+  var albumWidth = $('.album').width();
+  $('.album').css({
+    'height': albumWidth + 'px'
+  });
+}
+
+
+
+// Audio player carousel
+
+$('.album-slick').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  centerMode: true,
+  focusOnSelect: true,
+  variableWidth: true,
+  arrows: false,
+});
+
+
+
+// Audio player button controls
+
+
+
+if (ourSoundPage) {
+
+  audioPlayer();
+
+  function audioPlayer() {
+    var currentSong = 0;
+    $("#audioPlayer")[0].src = $("#playlist li a")[0];
+    $("#audioPlayer")[0].play();
+    $("#playlist li a").click(function(e) {
+      e.preventDefault();
+      $("#audioPlayer")[0].src = this;
+      $("#audioPlayer")[0].play();
+      $("#playlist li").removeClass("current-song");
+      currentSong = $(this).parent().index();
+      $(this).parent().addClass("current-song");
+    });
+
+    $("#audioPlayer")[0].addEventListener("ended", function() {
+      currentSong++;
+      if (currentSong == $("#playlist li a").length)
+        currentSong = 0;
+      $("#playlist li").removeClass("current-song");
+      $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+      $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+      $("#audioPlayer")[0].play();
+    });
+
+    $('#audioPlayer').on('timeupdate', function() {
+      $('#seekbar').attr("value", this.currentTime / this.duration);
+    });
+  }
+
+}
