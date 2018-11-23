@@ -2,6 +2,12 @@ body {
   background-color: $secondary-color;
 }
 
+.slick-slide {
+  &:focus, a {
+    outline: none;
+  }
+}
+
 .masthead {
   width: 100%;
   // background: $secondary-color;
