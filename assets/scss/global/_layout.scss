@@ -8,6 +8,22 @@ body {
   }
 }
 
+
+.slick-dots li.slick-active button:before, .slick-dots li button:before {
+    color: $primary-color;
+    opacity: 1;
+    font-size: 16px;
+}
+.slick-dots li.slick-active button {
+    border: 5px solid $primary-color;
+    border-radius: 100%;
+}
+.slick-dots li.slick-active button:before {
+    color: transparent;
+}
+
+
+
 .masthead {
   width: 100%;
   // background: $secondary-color;

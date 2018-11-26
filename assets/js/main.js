@@ -902,129 +902,137 @@ if (ourSoundPage) {
 
 
 
-// Audio player button controls for second carousel
+if (ourSoundPage) {
+
+  // Audio player button controls for second carousel
 
 
-// Audio 1 Seekbar
-$('#audioOne').on('timeupdate', function () {
+  // Audio 1 Seekbar
+  $('#audioOne').on('timeupdate', function() {
     $('#seekbarOne').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 2 Seekbar
-$('#audioTwo').on('timeupdate', function () {
+  // Audio 2 Seekbar
+  $('#audioTwo').on('timeupdate', function() {
     $('#seekbarTwo').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 3 Seekbar
-$('#audioThree').on('timeupdate', function () {
+  // Audio 3 Seekbar
+  $('#audioThree').on('timeupdate', function() {
     $('#seekbarThree').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 4 Seekbar
-$('#audioFour').on('timeupdate', function () {
+  // Audio 4 Seekbar
+  $('#audioFour').on('timeupdate', function() {
     $('#seekbarFour').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 5 Seekbar
-$('#audioFive').on('timeupdate', function () {
+  // Audio 5 Seekbar
+  $('#audioFive').on('timeupdate', function() {
     $('#seekbarFive').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 6 Seekbar
-$('#audioSix').on('timeupdate', function () {
+  // Audio 6 Seekbar
+  $('#audioSix').on('timeupdate', function() {
     $('#seekbarSix').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 7 Seekbar
-$('#audioSeven').on('timeupdate', function () {
+  // Audio 7 Seekbar
+  $('#audioSeven').on('timeupdate', function() {
     $('#seekbarSeven').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 8 Seekbar
-$('#audioEight').on('timeupdate', function () {
+  // Audio 8 Seekbar
+  $('#audioEight').on('timeupdate', function() {
     $('#seekbarEight').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 9 Seekbar
-$('#audioNine').on('timeupdate', function () {
+  // Audio 9 Seekbar
+  $('#audioNine').on('timeupdate', function() {
     $('#seekbarNine').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 10 Seekbar
-$('#audioTen').on('timeupdate', function () {
+  // Audio 10 Seekbar
+  $('#audioTen').on('timeupdate', function() {
     $('#seekbarTen').attr("value", this.currentTime / this.duration);
-});
+  });
 
-// Audio 11 Seekbar
-$('#audioEleven').on('timeupdate', function () {
+  // Audio 11 Seekbar
+  $('#audioEleven').on('timeupdate', function() {
     $('#seekbarEleven').attr("value", this.currentTime / this.duration);
-});
+  });
 
 
 
-// Pause Audio Befor playing new audio
-var audioOne = document.querySelector('#audioOne');
-var audioTwo = document.querySelector('#audioTwo');
-var audioThree = document.querySelector('#audioThree');
-var audioFour = document.querySelector('#audioFour');
-var audioFive = document.querySelector('#audioFive');
-var audioSix = document.querySelector('#audioSix');
-var audioSeven = document.querySelector('#audioSeven');
-var audioEight = document.querySelector('#audioEight');
-var audioNine = document.querySelector('#audioNine');
-var audioTen = document.querySelector('#audioTen');
-var audioEleven = document.querySelector('#audioEleven');
+  // Pause Audio Befor playing new audio
+  var audioOne = document.querySelector('#audioOne');
+  var audioTwo = document.querySelector('#audioTwo');
+  var audioThree = document.querySelector('#audioThree');
+  var audioFour = document.querySelector('#audioFour');
+  var audioFive = document.querySelector('#audioFive');
+  var audioSix = document.querySelector('#audioSix');
+  var audioSeven = document.querySelector('#audioSeven');
+  var audioEight = document.querySelector('#audioEight');
+  var audioNine = document.querySelector('#audioNine');
+  var audioTen = document.querySelector('#audioTen');
+  var audioEleven = document.querySelector('#audioEleven');
 
 
-var allAudio = document.querySelectorAll('audio');
+  var allAudio = document.querySelectorAll('audio');
 
-function stopAllAudio(){
-	allAudio.forEach(function(audio){
-		audio.pause();
-	});
+  function stopAllAudio() {
+    allAudio.forEach(function(audio) {
+      // pause current song
+      audio.pause();
+      // returns previous song to beginning
+      // audio.currentTime = 0;
+      
+    });
+  }
+
+  document.querySelector('#playOne').addEventListener('click', function() {
+    stopAllAudio();
+    audioOne.play();
+  })
+  document.querySelector('#playTwo').addEventListener('click', function() {
+    stopAllAudio();
+    audioTwo.play();
+  })
+  document.querySelector('#playThree').addEventListener('click', function() {
+    stopAllAudio();
+    audioThree.play();
+  })
+  document.querySelector('#playFour').addEventListener('click', function() {
+    stopAllAudio();
+    audioFour.play();
+  })
+  document.querySelector('#playFive').addEventListener('click', function() {
+    stopAllAudio();
+    audioFive.play();
+  })
+  document.querySelector('#playSix').addEventListener('click', function() {
+    stopAllAudio();
+    audioSix.play();
+  })
+  document.querySelector('#playSeven').addEventListener('click', function() {
+    stopAllAudio();
+    audioSeven.play();
+  })
+  document.querySelector('#playEight').addEventListener('click', function() {
+    stopAllAudio();
+    audioEight.play();
+  })
+  document.querySelector('#playNine').addEventListener('click', function() {
+    stopAllAudio();
+    audioNine.play();
+  })
+  document.querySelector('#playTen').addEventListener('click', function() {
+    stopAllAudio();
+    audioTen.play();
+  })
+  document.querySelector('#playEleven').addEventListener('click', function() {
+    stopAllAudio();
+    audioEleven.play();
+  })
+
 }
-
-document.querySelector('#playOne').addEventListener('click', function(){
-	stopAllAudio();
-	audioOne.play();
-})
-document.querySelector('#playTwo').addEventListener('click', function(){
-	stopAllAudio();
-	audioTwo.play();
-})
-document.querySelector('#playThree').addEventListener('click', function(){
-	stopAllAudio();
-	audioThree.play();
-})
-document.querySelector('#playFour').addEventListener('click', function(){
-	stopAllAudio();
-	audioFour.play();
-})
-document.querySelector('#playFive').addEventListener('click', function(){
-	stopAllAudio();
-	audioFive.play();
-})
-document.querySelector('#playSix').addEventListener('click', function(){
-	stopAllAudio();
-	audioSix.play();
-})
-document.querySelector('#playSeven').addEventListener('click', function(){
-	stopAllAudio();
-	audioSeven.play();
-})
-document.querySelector('#playEight').addEventListener('click', function(){
-	stopAllAudio();
-	audioEight.play();
-})
-document.querySelector('#playNine').addEventListener('click', function(){
-	stopAllAudio();
-	audioNine.play();
-})
-document.querySelector('#playTen').addEventListener('click', function(){
-	stopAllAudio();
-	audioTen.play();
-})
-document.querySelector('#playEleven').addEventListener('click', function(){
-	stopAllAudio();
-	audioEleven.play();
-})
