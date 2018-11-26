@@ -1036,3 +1036,60 @@ if (ourSoundPage) {
   })
 
 }
+
+
+
+// What We Do Page header
+
+// center elements
+TweenMax.set(".circlie", {
+  left: "50%",
+  top: "50%",
+  xPercent: -50,
+  yPercent: -50,
+  alpha: 0
+});
+
+// random scale, or I can use cycle here
+// TweenMax.staggerTo(".circlie", 1, {cycle: {scale:[1, .25, .5, .75]}});
+
+var scales = [0.25, 0.5, 0.75, 1];
+var colors = ["#f81acc", "#E00E4E", "#5219AA", "#C90D77", "#CF368D"];
+
+TweenLite.set(".circlie", {
+  scale: sample(scales)
+});
+
+var tl = new TimelineMax({
+  repeat: -1
+});
+
+for (var i = 0; i < 100; i++) {
+
+  tl.to(".circlie", 1, {
+    backgroundColor: sample(colors),
+    x: random(-300, 300),
+    y: random(-300, 300),
+    alpha: random(1),
+    repeat: 1,
+    repeatDelay: 0.1,
+    yoyo: true,
+    ease: Expo.easeOut
+  });
+}
+
+function sample(list) {
+  return function() {
+    return list[Math.floor(Math.random() * list.length)];
+  }
+}
+
+function random(min, max) {
+  if (max == null) {
+    max = min;
+    min = 0;
+  }
+  return function() {
+    return Math.random() * (max - min) + min;
+  }
+}

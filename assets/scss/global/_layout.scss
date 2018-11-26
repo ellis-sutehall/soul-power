@@ -3,26 +3,27 @@ body {
 }
 
 .slick-slide {
-  &:focus, a {
+  &:focus,
+  a {
     outline: none;
   }
 }
 
-
-.slick-dots li.slick-active button:before, .slick-dots li button:before {
-    color: $primary-color;
-    opacity: 1;
-    font-size: 16px;
-}
-.slick-dots li.slick-active button {
-    border: 5px solid $primary-color;
-    border-radius: 100%;
-}
+.slick-dots li button:before,
 .slick-dots li.slick-active button:before {
-    color: transparent;
+  color: $primary-color;
+  opacity: 1;
+  font-size: 16px;
 }
 
+.slick-dots li.slick-active button {
+  border: 5px solid $primary-color;
+  border-radius: 100%;
+}
 
+.slick-dots li.slick-active button:before {
+  color: transparent;
+}
 
 .masthead {
   width: 100%;
@@ -65,7 +66,6 @@ body {
   text-transform: uppercase;
   font-family: $body-font-family;
 }
-
 
 .vinyl {
   position: absolute;
@@ -190,17 +190,20 @@ body {
   width: auto;
   background: $primary-color;
 
-  .slick-dots li.slick-active button:before, .slick-dots li button:before {
-      color: #ffffff;
-      opacity: 1;
-      font-size: 16px;
-  }
-  .slick-dots li.slick-active button {
-      border: 5px solid #ffffff;
-      border-radius: 100%;
-  }
+  .slick-dots li button:before,
   .slick-dots li.slick-active button:before {
-      color: transparent;
+    color: #ffffff;
+    opacity: 1;
+    font-size: 16px;
+  }
+
+  .slick-dots li.slick-active button {
+    border: 5px solid #ffffff;
+    border-radius: 100%;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: transparent;
   }
 }
 
@@ -477,10 +480,7 @@ h1#decadesOfExperience {
     width: 100%;
     height: 100%;
   }
-
-
   // Old Audio player styling
-
   .player {
     position: relative;
     width: 100%;
@@ -567,7 +567,6 @@ h1#decadesOfExperience {
       opacity: 1;
       transition: 0.5s ease;
     }
-
   }
 }
 
@@ -599,5 +598,12 @@ progress::-webkit-progress-value {
 }
 
 
+// What We Do Page Header
 
-// audio test
+.circlie {
+  background: $primary-color;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
