@@ -189,11 +189,19 @@ body {
   color: $white;
   width: auto;
   background: $primary-color;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #f06c5c, $primary-color);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #f06c5c, $primary-color);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .slick-dots li.slick-active button:before, .slick-dots li button:before {
+      color: #ffffff;
+      opacity: 1;
+      font-size: 16px;
+  }
+  .slick-dots li.slick-active button {
+      border: 5px solid #ffffff;
+      border-radius: 100%;
+  }
+  .slick-dots li.slick-active button:before {
+      color: transparent;
+  }
 }
 
 .section-secondary {
@@ -221,12 +229,7 @@ body {
 }
 
 .artist-name {
-  background: #ef604e;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #f06c5c, #ef604e);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #f06c5c, #ef604e);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: $primary-color;
   color: #ffffff;
   display: block;
   position: absolute;

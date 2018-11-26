@@ -986,7 +986,7 @@ if (ourSoundPage) {
       audio.pause();
       // returns previous song to beginning
       // audio.currentTime = 0;
-      
+
     });
   }
 
