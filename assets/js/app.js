@@ -7,6 +7,7 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 // remaining JS code...
 
 require('./main.js');
+require('./home.js');
 
 import Foundation from 'foundation-sites';
 // If you want to pick and choose which modules to include, comment out the above and uncomment
@@ -17,7 +18,7 @@ import 'tablesaw/dist/tablesaw.jquery';
 import libs from './lib/dependencies';
 window.libs = libs;
 
-$(document).foundation();
+// $(document).foundation();
 
 libs.AOS.init();
 
@@ -81,6 +82,18 @@ $(".content-carousel").slick({
       breakpoint: 300,
       settings: "unslick" // destroys slick
     }]
+});
+
+// Testimonials Slider
+
+$('.fade').slick({
+  arrows: false,
+  autoplay: true,
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
 });
 
 // tablesaw table plugin

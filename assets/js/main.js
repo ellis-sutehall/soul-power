@@ -5,14 +5,127 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 // init controller
 var controller = new ScrollMagic.Controller();
 
+$( document ).ready(function() {
+
+
 // check Page is Experience
 let experiencePage = document.querySelector('.experience');
 
-// check Page is What We Do
-let ourSoundPage = document.querySelector('.ourSound');
+// check Page is Our Sound
+let ourSoundPage = document.querySelector('.our-sound');
 
-// Count for Years Experience start
+// Experience start
 if (experiencePage) {
+
+  // Artistes Grid
+  let experienceGrid = document.querySelector('.experience-grid');
+
+  // Array of Artistes
+  const artistes = {
+
+    james_brown: [ 'James Brown', 'james-brown' ],
+    elton_john: ['Elton John', 'elton-john' ],
+    lionel_richie: ['Lionel Richie', 'lionel-richie' ],
+    kylie_minogue: ['Kylie Minogue', 'kylie-minogue' ],
+    sophie: ['Sophie Ellis Bextor', 'sophie-ellis-bextor' ],
+    diana: ['Diana Krall', 'diana-krall' ],
+    buble: ['Michael Buble', 'michael-buble' ],
+    goerge_michael: ['George Michael', 'george-michael' ],
+    tom_jones: ['Tom Jones', 'tom-jones' ],
+    amy_winehouse: ['Amy Winehouse', 'amy-winehouse' ],
+    robbie_williams: ['Robbie Williams', 'robbie-williams' ],
+    westlife: ['Westlife', 'westlife' ],
+    mos_def: ['Mos Def', 'mos-def' ],
+    daniel_bedingfield: ['Daniel Bedingfield', 'daniel-bedingfield' ],
+    the_supremes: ['The Supremes', 'the-supremes' ],
+    jamie_cullum: ['Jamie Cullum', 'jamie-cullum' ],
+    all_saints: ['All Saints', 'all-saints' ],
+    the_feeling: ['The Feeling', 'the-feeling' ]
+
+  };
+
+  // Convert Object to Array
+  const artistesEntries = Object.entries(artistes);
+
+  // Declare empty var for innerHTML
+  let experienceGridInner = '';
+
+  // Loop all arrays from object
+  for( const [artistes, values] of artistesEntries ) {
+    experienceGridInner += `
+    <div data-aos="zoom-in-up" data-aos-delay="0" class="cell small-4 medium-3 large-2">
+      <img class="artist-image" src="../../assets/img/artistes/${values[1]}-colour.jpg">
+      <p class="artist-name"><small>${values[0]}</small></p>
+    </div>
+    `;
+  };
+
+  // Add loop result to var
+  experienceGrid.innerHTML = experienceGridInner;
+
+  // TV Shows Start
+  // Get ul
+  let shows = document.querySelector('.shows-js');
+
+  // Build array for shows
+  const showArray = ['The Charlotte Church Show', 'GM:TV', 'This Morning', 'Alan Titchmarsh', 'Later With Jools Holland', 'Justin Lee Collins Show', 'Parkinson', 'Top Of The Pops', 'National Lottery', 'Strictly Come Dancing', 'Pop Idol', 'Friday Night With Jonathan Ross'];
+
+  // Declare empty var for innerHTML
+  let showsInner = '';
+
+  // Loop array entries and output HTML
+  for( let i = 0; i < showArray.length; i++ ) {
+
+    showsInner += `
+
+      <li class="small-12 medium-6 large-4">${showArray[i]}</li>
+
+    `;
+
+  };
+
+  // Add loop result to var
+  shows.innerHTML = showsInner;
+
+  // TV Shows End
+
+  // Brands Start
+  // Get Brands Container
+  let brands = document.querySelector('.brands-js');
+
+  // Build array for Brands
+  const brandsArray = ['virgin-atlantic', 'hilton-hotels', 'bp', 'isle-of-wight-festival', 'jcb', 'aveva', 'pwc', 'bank-of-scotland', 'claridges', 'phizer', 'university-of-cambridge', 'bayer', 'rics', 'glastonbury', 'royal-college-of-music', 'halifax', 'courage-brewery', 'monsanto'];
+
+  // Declare empty var for innerHTML
+  let brandsInner = '';
+
+  // Loop array and output HTML
+
+  // Declare var for data counter
+  let ii = 0;
+  for( let i = 0; i < brandsArray.length; i++ ) {
+    // Increment by 50
+    ii+=50;
+
+    brandsInner += `
+
+    <div data-aos="zoom-in-up" data-aos-delay="${[ii]}" class="cell small-4 medium-3 large-2">
+      <img class="brand-logo" src="../../assets/img/brands/${brandsArray[i]}-logo.svg">
+    </div>
+
+    `;
+
+  };
+
+  // Add loop result to var
+  brands.innerHTML = brandsInner;
+
+  // Brands End
+
+  for (var i = 0; i <= 850; i+= 50) {
+    console.log(i);
+  }
+
   var counter = {
     var: 0
   };
@@ -146,52 +259,16 @@ var soulpowerFooterLogoScene = new ScrollMagic.Scene({
 
 // Footer Logo annimation End
 
-// Testimonials Start
-
-$('.fade').slick({
-  arrows: false,
-  autoplay: true,
-  dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-});
-
-// testimonials End
-
-// Showreel Video Swap Start
-let playVideo = document.getElementById('play-video');
-if (playVideo) {
-  playVideo.addEventListener('click', videoSwap);
-}
-
-function videoSwap() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      let video = document.getElementById('video');
-      let branding = document.getElementById('branding');
-      video.innerHTML = this.responseText;
-      branding.style.display = 'none';
-      video.style.zIndex = '99999';
-    }
-  };
-  xhttp.open('GET', '/assets/video/showreel.txt', true);
-  xhttp.send();
-}
-// Showreel Video Swap End
-
-// Nav Bar
-let menuButton = document.querySelector('.menu-icon');
-let titleBar = document.querySelector('.title-bar');
-menuButton.addEventListener('click', function() {
-  if (titleBar.classList.contains('title-bar-bg-js')) {
-    titleBar.classList.remove('title-bar-bg-js');
-  } else {
-    titleBar.classList.add('title-bar-bg-js');
-  }
-});
+// Nav Bar ////  Still required?? ////
+// let menuButton = document.querySelector('.menu-icon');
+// let titleBar = document.querySelector('.title-bar');
+// menuButton.addEventListener('click', function() {
+//   if (titleBar.classList.contains('title-bar-bg-js')) {
+//     titleBar.classList.remove('title-bar-bg-js');
+//   } else {
+//     titleBar.classList.add('title-bar-bg-js');
+//   }
+// });
 
 
 // SoulFro Animation
@@ -850,196 +927,309 @@ if (ourSoundPage) {
 
 
 
+// $( document ).ready(function() {
+//   $('.album-slick').slick({
+//     dots: true,
+//     infinite: true,
+//     speed: 300,
+//     slidesToShow: 1,
+//     centerMode: true,
+//     focusOnSelect: true,
+//     variableWidth: true,
+//     arrows: false,
+//   });
+// });
 // Audio player carousel
 
-$('.album-slick').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  centerMode: true,
-  focusOnSelect: true,
-  variableWidth: true,
-  arrows: false,
-});
+
 
 
 
 // Audio player button controls for first carousel
 
-if (ourSoundPage) {
+// if (ourSoundPage) {
+//
+//   audioPlayer();
+//
+//   function audioPlayer() {
+//     var currentSong = 0;
+//     $("#audioPlayer")[0].src = $("#playlist li a")[0];
+//     $("#playlist li a").click(function(e) {
+//       e.preventDefault();
+//       $("#audioPlayer")[0].src = this;
+//       $("#audioPlayer")[0].play();
+//       $("#playlist li").removeClass("current-song");
+//       currentSong = $(this).parent().index();
+//       $(this).parent().addClass("current-song");
+//       console.log(currentSong);
+//     });
+//
+//     var currentSong = 0;
+//     $("#audioPlayer")[0].src = $("#playlist li a")[0];
+//     $("#playlist li a").click(function(e) {
+//       e.preventDefault();
+//       $("#audioPlayer")[0].src = this;
+//       $("#audioPlayer")[0].play();
+//
+//
+//
+//     });
+//
+//     $("#audioPlayer")[0].addEventListener("ended", function() {
+//       currentSong++;
+//       if (currentSong == $("#playlist li a").length)
+//         currentSong = 0;
+//       $("#playlist li").removeClass("current-song");
+//       $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+//       $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+//       $("#audioPlayer")[0].play();
+//     });
+//
+//     $('#audioPlayer').on('timeupdate', function() {
+//       $('#seekbar').attr("value", this.currentTime / this.duration);
+//     });
+//   }
+//
+// }
 
-  audioPlayer();
 
-  function audioPlayer() {
-    var currentSong = 0;
-    $("#audioPlayer")[0].src = $("#playlist li a")[0];
-    $("#playlist li a").click(function(e) {
-      e.preventDefault();
-      $("#audioPlayer")[0].src = this;
-      $("#audioPlayer")[0].play();
-      $("#playlist li").removeClass("current-song");
-      currentSong = $(this).parent().index();
-      $(this).parent().addClass("current-song");
-    });
+////////////////////////////
+////////// DUKEBOX ////////
+//////////////////////////
 
-    $("#audioPlayer")[0].addEventListener("ended", function() {
-      currentSong++;
-      if (currentSong == $("#playlist li a").length)
-        currentSong = 0;
-      $("#playlist li").removeClass("current-song");
-      $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
-      $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
-      $("#audioPlayer")[0].play();
-    });
+  // Object for Tracks and info
+  const dukebox = {
 
-    $('#audioPlayer').on('timeupdate', function() {
-      $('#seekbar').attr("value", this.currentTime / this.duration);
-    });
+    stevie_wonder: ['SignedSealedDelivered', 'I\'m Yours!', 'Stevie Wonder', 'Signed, Sealed, Delivered'],
+
+    wilson_pickett: ['6345789', '634-5789', 'Wilson Pickett',  'The Exciting Wilson Pickett'],
+
+    sam_dave: ['HoldOnImComing', 'Hold On, I\'m Comin\'', 'Sam & Dave', 'Hold On, I\'m Comin\'' ],
+
+    wilson_pickett_midnight: ['TheMidnightHour', 'The Midnight Hour', 'Wilson Pickett', 'The Exciting Wilson Pickett'],
+
+    arthur_conley: ['SweetSoulMusic', 'Sweet Soul Music', 'Arthur Conley', 'Sweet Soul Music'],
+
+    wilson_pickett_mustang: ['MustangSally', 'Mustang Sally', 'Wilson Pickett', 'The Wicked Pickett'],
+
+    smokey_robinson: ['MyGirl', 'My Girl', 'Smokey Robinson', 'Time Out for Smokey Robinson & The Miracles'],
+
+    otis_redding: ['HardToHandle', 'Hard To Handle', 'Otis Redding', 'The Immortal Otis Redding'],
+
+    james_brown: ['JBrownMix', 'Soul Power 74', 'James Brown', 'Instrumental'],
+
+    wild_cherry: ['FunkyMusic', 'Play That Funky Music', 'Wild Cherry', 'Wild Cherry'],
+
+    stevie_wonder_wish: ['IWish', 'I Wish', 'Stevie Wonder', 'Songs in the Key of Life']
+
   }
 
-}
+  // Check page == Our Sound
+  if(ourSoundPage) {
 
+    // Get Parent
+    let albumSlick = document.querySelector('.album-slick');
+    // console.log(albumSlick);
 
+    // Convert Object to Array
+    const entries = Object.entries(dukebox);
 
-if (ourSoundPage) {
+    // Dynamically build Dukebox HTML
 
-  // Audio player button controls for second carousel
+    let dukeboxLoop = '';
 
+    for(const [dukebox, values] of entries) {
+    // console.log(dukebox[0], values[1]);
+      dukeboxLoop += `<li class="current-song album-cover">
+        <a href="../../assets/media/${dukebox[0], values[0]}.mp3">
+        <div class="album-wrapper">
+          <!-- album artwork -->
+          <div class="album-cover-artwork">
+            <!-- <progress id="seekbar" value="0" max="1"></progress> -->
+            <div class="album-cover-artwork-highlight"></div>
+          </div>
+          <!-- album info -->
+          <div class="album-info">
+            <div class="grid-container grid-y cover-info text-center">
+              <!-- padding  top -->
+              <div class="cell auto"></div>
+              <!-- album info -->
+              <div class="cell shrink">
+                <p>${dukebox[0], values[1]}</p>
+                <h2>${dukebox[0], values[2]}</h2>
+              </div>
+              <!-- padding  bottom -->
+              <div class="cell auto"></div>
+              <div class="cell shrink">
+                <p><small>${dukebox[0], values[3]}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+      </li>
+      `;
 
-  // Audio 1 Seekbar
-  $('#audioOne').on('timeupdate', function() {
-    $('#seekbarOne').attr("value", this.currentTime / this.duration);
-  });
+    };
 
-  // Audio 2 Seekbar
-  $('#audioTwo').on('timeupdate', function() {
-    $('#seekbarTwo').attr("value", this.currentTime / this.duration);
-  });
+    albumSlick.innerHTML = dukeboxLoop;
 
-  // Audio 3 Seekbar
-  $('#audioThree').on('timeupdate', function() {
-    $('#seekbarThree').attr("value", this.currentTime / this.duration);
-  });
+    // Init slick on completed HTML
+    $('.album-slick').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      focusOnSelect: true,
+      variableWidth: true,
+      arrows: false,
+    });
 
-  // Audio 4 Seekbar
-  $('#audioFour').on('timeupdate', function() {
-    $('#seekbarFour').attr("value", this.currentTime / this.duration);
-  });
+    // Get Remaining Variables after JS Builds HTML
+    let audioPlayer = document.getElementById('audioPlayer');
+    // console.log(audioPlayer);
+    let playList = document.getElementById('playlist');
+    // console.log(playList);
+    let playListItem = document.querySelectorAll('#playlist li');
+    // console.log(playListItem);
+    let playListLink = document.querySelectorAll('#playlist .album-cover > a');
+    // console.log(playListLink);
+    let slickActive = document.querySelector('.slick-slide.slick-active li a');
+    // console.log(slickActive);
+    let albumCoverFirst = document.querySelector('.slick-slide.slick-active .album-cover-artwork');
+    // console.log(albumCoverFirst);
+    let playButton = document.querySelector('.play');
+    // console.log(playButton);
+    let playButtonIcon = document.querySelector('.play > .fa-play-circle');
+    // console.log(playButtonIcon);
+    let vUp = document.querySelector('.v-up');
+    // console.log(vUp);
+    let vDown = document.querySelector('.v-down');
+    // console.log(vDown);
 
-  // Audio 5 Seekbar
-  $('#audioFive').on('timeupdate', function() {
-    $('#seekbarFive').attr("value", this.currentTime / this.duration);
-  });
+    // Play Songs on click
 
-  // Audio 6 Seekbar
-  $('#audioSix').on('timeupdate', function() {
-    $('#seekbarSix').attr("value", this.currentTime / this.duration);
-  });
+    // Set Default audio track before clicked
+    audioPlayer.setAttribute('src', slickActive);
+    // Run loop for link count
+    for( let i = 0; i < playListLink.length; i ++ ) {
+      // Add Eventlistener on click
+      playListLink[i].addEventListener('click', function(e) {
+        // Prevent Audio player loading
+        e.preventDefault();
+        // Set src of audio player to clicked link
+        audioPlayer.setAttribute('src', playListLink[i]);
 
-  // Audio 7 Seekbar
-  $('#audioSeven').on('timeupdate', function() {
-    $('#seekbarSeven').attr("value", this.currentTime / this.duration);
-  });
+        // Change icon on play button
+        if( playButtonIcon.classList.contains('fa-play-circle') ) {
+          playButtonIcon.classList.remove('fa-play-circle');
+          playButtonIcon.classList.add('fa-pause-circle');
+        }
 
-  // Audio 8 Seekbar
-  $('#audioEight').on('timeupdate', function() {
-    $('#seekbarEight').attr("value", this.currentTime / this.duration);
-  });
+        // Finally, play newly set src
+        audioPlayer.play();
 
-  // Audio 9 Seekbar
-  $('#audioNine').on('timeupdate', function() {
-    $('#seekbarNine').attr("value", this.currentTime / this.duration);
-  });
+      });
 
-  // Audio 10 Seekbar
-  $('#audioTen').on('timeupdate', function() {
-    $('#seekbarTen').attr("value", this.currentTime / this.duration);
-  });
+    }
 
-  // Audio 11 Seekbar
-  $('#audioEleven').on('timeupdate', function() {
-    $('#seekbarEleven').attr("value", this.currentTime / this.duration);
-  });
+    // Assign Seekbar to Active slide
 
+    // Hook into native slick function 'afterChange'
+    $('.album-slick').on('afterChange', function(){
+      // console.log('slide changed');
+      // Get album art work div
+      let albumCover = $('.slick-current .album-cover-artwork')[0];
+      // console.log(albumCover);
+      for(let i = 0; i < playListItem.length; i ++) {
+        if( !playListItem[i].classList.contains('current-song') ) {
+          playListItem[i].classList.add('current-song');
+        }
+      }
+      if(albumCover.childElementCount < 2) {
+        // Create progress element and append to DOM
+        let progress = document.createElement('PROGRESS');
+        progress.setAttribute('id', 'seekbar');
+        progress.setAttribute('value', '0');
+        progress.setAttribute('max', '1');
+        albumCover.appendChild(progress);
+        // Play progress
+        $('#audioPlayer').on('timeupdate', function() {
+          $('.slick-current #seekbar').attr("value", this.currentTime / this.duration);
+        });
 
-
-  // Pause Audio Befor playing new audio
-  var audioOne = document.querySelector('#audioOne');
-  var audioTwo = document.querySelector('#audioTwo');
-  var audioThree = document.querySelector('#audioThree');
-  var audioFour = document.querySelector('#audioFour');
-  var audioFive = document.querySelector('#audioFive');
-  var audioSix = document.querySelector('#audioSix');
-  var audioSeven = document.querySelector('#audioSeven');
-  var audioEight = document.querySelector('#audioEight');
-  var audioNine = document.querySelector('#audioNine');
-  var audioTen = document.querySelector('#audioTen');
-  var audioEleven = document.querySelector('#audioEleven');
-
-
-  var allAudio = document.querySelectorAll('audio');
-
-  function stopAllAudio() {
-    allAudio.forEach(function(audio) {
-      // pause current song
-      audio.pause();
-      // returns previous song to beginning
-      // audio.currentTime = 0;
+      }
 
     });
+
+      let slickDots = document.querySelectorAll('.album-slick .slick-dots li');
+      // console.log(slickDots);
+
+      for(let i = 0; i < slickDots.length; i++) {
+        slickDots[i].addEventListener('click', function() {
+          audioPlayer.setAttribute('src', playListLink[i]);
+
+          // Change icon on play button
+          if( playButtonIcon.classList.contains('fa-play-circle') ) {
+            playButtonIcon.classList.remove('fa-play-circle');
+            playButtonIcon.classList.add('fa-pause-circle');
+          }
+
+          audioPlayer.play();
+        });
+      }
+
+
+      // Play / Pause Button
+      playButton.addEventListener('click', function() {
+        audioPlayer.play();
+        if( playButtonIcon.classList.contains('fa-play-circle') ) {
+          playButtonIcon.classList.remove('fa-play-circle');
+          playButtonIcon.classList.add('fa-pause-circle');
+        } else {
+          playButtonIcon.classList.remove('fa-pause-circle');
+          playButtonIcon.classList.add('fa-play-circle');
+          audioPlayer.pause();
+        }
+      });
+
+      // Volume Up / Down Buttons
+      vUp.addEventListener('click', function() {
+        audioPlayer.volume+=0.1;
+      });
+
+      vDown.addEventListener('click', function() {
+        audioPlayer.volume-=0.1;
+      });
+
   }
-
-  document.querySelector('#playOne').addEventListener('click', function() {
-    stopAllAudio();
-    audioOne.play();
-  })
-  document.querySelector('#playTwo').addEventListener('click', function() {
-    stopAllAudio();
-    audioTwo.play();
-  })
-  document.querySelector('#playThree').addEventListener('click', function() {
-    stopAllAudio();
-    audioThree.play();
-  })
-  document.querySelector('#playFour').addEventListener('click', function() {
-    stopAllAudio();
-    audioFour.play();
-  })
-  document.querySelector('#playFive').addEventListener('click', function() {
-    stopAllAudio();
-    audioFive.play();
-  })
-  document.querySelector('#playSix').addEventListener('click', function() {
-    stopAllAudio();
-    audioSix.play();
-  })
-  document.querySelector('#playSeven').addEventListener('click', function() {
-    stopAllAudio();
-    audioSeven.play();
-  })
-  document.querySelector('#playEight').addEventListener('click', function() {
-    stopAllAudio();
-    audioEight.play();
-  })
-  document.querySelector('#playNine').addEventListener('click', function() {
-    stopAllAudio();
-    audioNine.play();
-  })
-  document.querySelector('#playTen').addEventListener('click', function() {
-    stopAllAudio();
-    audioTen.play();
-  })
-  document.querySelector('#playEleven').addEventListener('click', function() {
-    stopAllAudio();
-    audioEleven.play();
-  })
-
-}
 
 
 
 // What We Do Page header
+let whatWeDo = document.querySelector('.what-we-do');
+if(whatWeDo) {
+
+  // Loop for circlie
+
+  let whatWeDoMhImg = document.querySelector('.what-we-do > .masthead-images');
+
+  // Count of elements
+  let circlieCount = 37;
+
+  // Blank var for innerHTML
+  let imgInner = ''
+
+  for( let i = 0; i < circlieCount; i++ ) {
+    imgInner += `
+      <div class="circlie"></div>
+    `;
+  };
+
+  whatWeDoMhImg.innerHTML = imgInner;
+
+}
 
 // center elements
 TweenMax.set(".circlie", {
@@ -1093,3 +1283,6 @@ function random(min, max) {
     return Math.random() * (max - min) + min;
   }
 }
+
+
+});

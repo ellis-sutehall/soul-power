@@ -2,13 +2,14 @@ body {
   background-color: $secondary-color;
 }
 
+// Slick Start
+
 .slick-slide {
   &:focus,
   a {
     outline: none;
   }
 }
-
 .slick-dots li button:before,
 .slick-dots li.slick-active button:before {
   color: $primary-color;
@@ -39,6 +40,15 @@ body {
     video {
       width: 100%;
     }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
   }
   // background: $secondary-color;
   color: $white;
@@ -56,7 +66,16 @@ body {
     z-index: -1;
   }
 }
-// Vinyl
+
+#playlist {
+  .slick-dots {
+   position: relative!important;
+   padding-bottom: $padding-medium;
+ }
+}
+// Slick End
+
+// Vinyl Start
 
 .header-text {
   letter-spacing: 0.5em;
@@ -93,6 +112,7 @@ body {
 .vinyl-hole {
   fill: $secondary-color;
 }
+
 // SoulFro
 // need to clean
 
@@ -120,6 +140,10 @@ body {
   fill: #ffe01b;
 }
 
+.st2, .st3, .st4, {
+  fill: none;
+}
+
 .face-one {
   fill: $secondary-color;
 }
@@ -135,19 +159,19 @@ body {
 }
 
 .st2 {
-  fill: none;
+  // fill: none;
   stroke: #0B1632;
   stroke-width: 2;
 }
 
 .st3 {
-  fill: none;
+  // fill: none;
   stroke: #0B1632;
   stroke-width: 2;
 }
 
 .st4 {
-  fill: none;
+  // fill: none;
   stroke: #0B1632;
 }
 
@@ -183,6 +207,8 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
 // need to clean
 
 .section-primary {
@@ -192,13 +218,13 @@ body {
 
   .slick-dots li button:before,
   .slick-dots li.slick-active button:before {
-    color: #ffffff;
+    color: $white;
     opacity: 1;
     font-size: 16px;
   }
 
   .slick-dots li.slick-active button {
-    border: 5px solid #ffffff;
+    border: 5px solid $white;
     border-radius: 100%;
   }
 
@@ -226,6 +252,7 @@ body {
 }
 
 .artist-image {
+  // Should be covered by SASS compiler
   -webkit-filter: grayscale(100%);
   /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
@@ -270,7 +297,7 @@ body {
   text-transform: uppercase;
 }
 
-.devide-primary {
+.devide-primary, .devide-secondary {
   margin: auto;
   width: 20px;
   height: 5px;
@@ -280,12 +307,12 @@ body {
 }
 
 .devide-secondary {
-  margin: auto;
-  width: 20px;
-  height: 5px;
-  transform: rotate(-20deg) skew(-20deg);
+  // margin: auto;
+  // width: 20px;
+  // height: 5px;
+  // transform: rotate(-20deg) skew(-20deg);
   background: $primary-color;
-  margin-bottom: 1em;
+  // margin-bottom: 1em;
 }
 
 .page-down {
@@ -319,6 +346,8 @@ body {
 h1#decadesOfExperience {
   position: relative;
 }
+
+
 // Testimonial
 
 .fade {
@@ -426,6 +455,19 @@ h1#decadesOfExperience {
   height: 100%;
   width: 100%;
   color: #ffffff;
+  a.play {
+    width: 100%;
+    height: 100%;
+    background-color: $dark-gray;
+    border-radius: 50%;
+    border: 2px solid white;
+    opacity: 0;
+    z-index: 10000000;
+    @include absolute-center;
+    &:hover {
+      opacity: .8;
+    }
+  }
 }
 
 .stevie-wonder {
@@ -490,12 +532,9 @@ h1#decadesOfExperience {
     .volume-up {
       left: 30%;
       right: 0;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       top: 40%;
       bottom: 0;
-      margin-top: auto;
-      margin-bottom: auto;
       height: 5%;
       width: 5%;
       position: absolute;
@@ -509,12 +548,9 @@ h1#decadesOfExperience {
     .volume-down {
       left: 0;
       right: 30%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       top: 40%;
       bottom: 0;
-      margin-top: auto;
-      margin-bottom: auto;
       height: 5%;
       width: 5%;
       position: absolute;
@@ -528,12 +564,9 @@ h1#decadesOfExperience {
     .play {
       left: 0;
       right: 0;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       top: 40%;
       bottom: 0;
-      margin-top: auto;
-      margin-bottom: auto;
       height: 14%;
       width: 14%;
       position: absolute;
@@ -547,12 +580,9 @@ h1#decadesOfExperience {
     .pause {
       left: 0;
       right: 0;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0;
       top: 65%;
       bottom: 0;
-      margin-top: auto;
-      margin-bottom: auto;
       height: 5%;
       width: 5%;
       position: absolute;
@@ -606,4 +636,19 @@ progress::-webkit-progress-value {
   width: 20px;
   height: 20px;
   position: absolute;
+}
+
+
+// Our Sound Buttons (Move into correct place)
+
+.button {
+  &.play, &.v-down, &.v-up {
+    background: none;
+    color: $primary-color;
+    font-size: 3rem;
+    padding: 1rem;
+  }
+  &.v-down, &.v-up {
+    font-size: 1.2rem;
+  }
 }
