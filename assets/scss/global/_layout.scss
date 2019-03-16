@@ -86,7 +86,7 @@ ul.slick-dots {
 .header-text {
   letter-spacing: 0.5em;
   // margin to remover letter spaceing from last letter
-  margin-right: -0.5em;
+  // margin-right: -0.5em;
   font-weight: bold;
   text-transform: uppercase;
   font-family: $body-font-family;
@@ -664,7 +664,7 @@ progress::-webkit-progress-value {
 // Our Sound Buttons (Move into correct place)
 
 .button {
-  &.play, &.v-down, &.v-up {
+  &.play, &.v-down, &.v-up, &.spin, &.pause {
     background: none;
     color: $primary-color;
     font-size: 3rem;
@@ -672,5 +672,8 @@ progress::-webkit-progress-value {
   }
   &.v-down, &.v-up {
     font-size: 1.2rem;
+  }
+  &.spin, &.pause {
+    color: white;
   }
 }
