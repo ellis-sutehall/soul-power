@@ -1,6 +1,7 @@
 // Import ScrollMagic library
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+import whatInput from 'what-input';
 // import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'; // comment out on biuld
 // init controller
 var controller = new ScrollMagic.Controller();
@@ -1108,14 +1109,23 @@ if (ourSoundPage) {
     let vDown = document.querySelector('.v-down');
     // console.log(vDown);
 
-    // Play Songs on click
+    // Play Songs on click / touch
+
+    // Set var for input type
+    let inputType = '';
+    if( whatInput.ask() === 'touch' ) {
+      inputType = 'touchstart';
+    } else {
+      inputType = 'click';
+    }
+
 
     // Set Default audio track before clicked
     audioPlayer.setAttribute('src', slickActive);
     // Run loop for link count
     for( let i = 0; i < playListLink.length; i ++ ) {
       // Add Eventlistener on click
-      playListLink[i].addEventListener('click', function(e) {
+      playListLink[i].addEventListener(inputType, function(e) {
         // Prevent Audio player loading
         e.preventDefault();
         // Set src of audio player to clicked link

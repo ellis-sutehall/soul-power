@@ -17,8 +17,11 @@ if( homePage ) {
         let video = document.getElementById('video');
         let branding = document.getElementById('branding');
         video.innerHTML = this.responseText;
-        branding.style.display = 'none';
+        // branding.style.display = 'none';
         video.style.zIndex = '99999';
+        if(!branding.classList.contains('display-none-m-up')) {
+          branding.classList.add('display-none-m-up');
+        }
       }
     };
     // Local File

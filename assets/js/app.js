@@ -1,5 +1,10 @@
 import $ from 'jquery';
-import whatInput from 'what-input';
+
+
+// Date for copyright in footer
+let year = document.querySelector('.footer span');
+let date = new Date();
+year.innerHTML = date.getFullYear()
 
 window.$ = $;
 // Import custom animation (greenSock)
