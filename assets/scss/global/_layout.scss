@@ -1,6 +1,34 @@
 body {
   background-color: $secondary-color;
 }
+:focus {
+  outline: 0!important;
+}
+
+.h1 {
+  font-size: rem-calc(36px);
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(60px);
+  }
+
+}
+
+.h2 {
+  font-size: rem-calc(20px);
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(40px);
+  }
+
+}
+
+.accordion, .accordion-content  {
+  background: $light-gray;
+  .accordion-title.h2 {
+    color: rgb(72,72,72);
+  }
+}
 
 // Slick Start
 
@@ -8,6 +36,90 @@ body {
 ul.slick-dots {
   margin-left: 0;
   left: 0;
+}
+
+.masthead {
+  width: 100%;
+  color: $white;
+  overflow: hidden;
+
+  #video {
+    width: 100%;
+    width: 100vw;
+    height: 50%;
+    height: 50vh;
+
+    @include breakpoint(medium up) {
+      height: 100%;
+      height: 100vh;
+    }
+
+    .video-bg {
+      z-index: -1;
+      width: 100vw;
+      min-height: 338px;
+      height: auto;
+      background-image: url(/assets/video/soul-power-showreel-bg.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include breakpoint(medium up) {
+        @include absolute-center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    video {
+      width: 100%;
+    }
+
+    iframe {
+
+      width: 100%;
+      margin-top: 4rem;
+
+      @include breakpoint(medium up) {
+
+        @include absolute-center;
+        margin-top: 0;
+        width: 90%;
+        height: 90%;
+      }
+
+    }
+
+
+  }
+
+  #branding {
+    width: 100%;
+    width: 100vw;
+    height: 50%;
+    height: 50vh;
+    @include breakpoint(medium up) {
+      @include absolute-center;
+
+      // height: 100%;
+      // height: 100vh;
+    }
+  }
+
+  // background: $secondary-color;
+  color: $white;
+
+  .logo {
+    max-width: 320px;
+    height: auto;
+  }
+
+  .masthead-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
 }
 
 .slick-slide {
@@ -30,47 +142,6 @@ ul.slick-dots {
 
 .slick-dots li.slick-active button:before {
   color: transparent;
-}
-
-.masthead {
-  width: 100%;
-  // background: $secondary-color;
-  color: $white;
-
-  div#video {
-    @include absolute-center;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-
-    video {
-      width: 100%;
-    }
-
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-  }
-  // background: $secondary-color;
-  color: $white;
-
-  .logo {
-    max-width: 320px;
-    height: auto;
-  }
-
-  .masthead-images {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-  }
 }
 
 #playlist {
@@ -404,8 +475,10 @@ h1#decadesOfExperience {
   display: inline;
 }
 
-.hide {
-  display: none;
+.display-none-m-up {
+  @include breakpoint(medium up) {
+    display: none;
+  }
 }
 
 .cover-highlight {
