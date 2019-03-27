@@ -18,6 +18,12 @@ $app-dashboard-top-nav-height: rem-calc(55);
     width: 100%;
     display: flex;
     justify-content: space-between;
+    img {
+      width: 40px;
+      // @include breakpoint(medium up) {
+      //   width: 60px;
+      // }
+    }
   }
   div, button {
     z-index: 10000;
@@ -90,7 +96,10 @@ $app-dashboard-top-nav-height: rem-calc(55);
 .top-bar-left {
   width: 40%;
   ul {
-    width: 100%;
+    width: 80%;
+    @include breakpoint(medium up) {
+      width: 100%;
+    }
   }
 }
 @include breakpoint(medium down) {

@@ -23,10 +23,31 @@ body {
 
 }
 
-.accordion, .accordion-content  {
-  background: $light-gray;
+p a {
+  font-weight: bold;
+}
+
+.accordion, .accordion-content {
+  // @include breakpoint(medium up) {
+    background: $light-gray;
+  // }
+  .accordion-content {
+    border: 0;
+  }
   .accordion-title.h2 {
     color: rgb(72,72,72);
+    border: 0;
+    &::before {
+      @include breakpoint(small only) {
+        right: .3rem;
+        opacity: .5;
+      }
+    }
+  }
+  .accordion-item:nth-child(even), .accordion-content:nth-child(even) {
+    @include breakpoint(small only) {
+      // background-color: white;
+    }
   }
 }
 
@@ -109,8 +130,17 @@ ul.slick-dots {
   color: $white;
 
   .logo {
-    max-width: 320px;
+    max-width: 50vw;
     height: auto;
+
+    @include breakpoint(medium up) {
+      max-width: 320px;
+    }
+    + h1 {
+      font-size: 1.8rem;
+      margin-top: 1rem;
+    }
+
   }
 
   .masthead-images {
@@ -155,9 +185,11 @@ ul.slick-dots {
 // Vinyl Start
 
 .header-text {
-  letter-spacing: 0.5em;
-  // margin to remover letter spaceing from last letter
-  // margin-right: -0.5em;
+  letter-spacing: .2em;
+
+  @include breakpoint(medium up) {
+    letter-spacing: 0.5em;
+  }
   font-weight: bold;
   text-transform: uppercase;
   font-family: $body-font-family;
@@ -310,7 +342,7 @@ ul.slick-dots {
   }
 }
 
-.section-secondary {
+.section-secondary, .section-tertiary {
   background: $light-gray;
   position: relative;
   .cell.shrink {
