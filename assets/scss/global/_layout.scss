@@ -137,8 +137,10 @@ ul.slick-dots {
       max-width: 320px;
     }
     + h1 {
-      font-size: 1.8rem;
-      margin-top: 1rem;
+      @include breakpoint(small only) {
+        font-size: 1.8rem;
+        margin-top: 1rem;
+      }
     }
 
   }
