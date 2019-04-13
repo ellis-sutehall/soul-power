@@ -19,7 +19,7 @@ $app-dashboard-top-nav-height: rem-calc(55);
     display: flex;
     justify-content: space-between;
     img {
-      width: 40px;
+      width: 30px;
       // @include breakpoint(medium up) {
       //   width: 60px;
       // }
@@ -96,10 +96,7 @@ $app-dashboard-top-nav-height: rem-calc(55);
 .top-bar-left {
   width: 40%;
   ul {
-    width: 80%;
-    @include breakpoint(medium up) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 @include breakpoint(medium down) {
