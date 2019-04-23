@@ -34,22 +34,23 @@ if( homePage ) {
 
 
 
-  // Loop for Presenting Soul Power
-  let presenting = document.querySelector('.presenting');
+  // Loop for Presenting SoulPower
 
-  const bandMembers = ['name','name','name','name','name','name','name','name','name','name','name','name',];
-
-  let presentingInner = '';
-
-  for( let i = 0; i < bandMembers.length; i++ ) {
-    presentingInner += `
-    <div data-aos="zoom-in-up" data-aos-delay="0" class="cell small-6 medium-3 large-2">
-      <img class="artist-image" src="../../assets/img/profile/low-key-saxophone.jpg"></img>
-      <p class="artist-name"><small>${bandMembers[i]}</small></p>
-    </div>
-    `;
-  };
-
-  presenting.innerHTML = presentingInner;
+  // let presenting = document.querySelector('.presenting');
+  //
+  // const bandMembers = ['name','name','name','name','name','name','name','name','name','name','name','name',];
+  //
+  // let presentingInner = '';
+  //
+  // for( let i = 0; i < bandMembers.length; i++ ) {
+  //   presentingInner += `
+  //   <div data-aos="zoom-in-up" data-aos-delay="0" class="cell small-6 medium-3 large-2">
+  //     <img class="artist-image" src="../../assets/img/profile/low-key-saxophone.jpg"></img>
+  //     <p class="artist-name"><small>${bandMembers[i]}</small></p>
+  //   </div>
+  //   `;
+  // };
+  //
+  // presenting.innerHTML = presentingInner;
 
 }

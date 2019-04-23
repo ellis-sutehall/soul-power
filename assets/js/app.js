@@ -89,17 +89,9 @@ $(".content-carousel").slick({
     }]
 });
 
-// Testimonials Slider
 
-$('.fade').slick({
-  arrows: false,
-  autoplay: true,
-  dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-});
+
+
 
 // tablesaw table plugin
 $(function () {

@@ -8,6 +8,97 @@ var controller = new ScrollMagic.Controller();
 
 $( document ).ready(function() {
 
+  // Testimonials Slider
+
+  const testimonials = {
+
+    1: [ 'Thank you for the great session you put together for us on Saturday the feedback from our guests was great and to be honest I’ll be surprised of you don’t get contacted by a few people for further booking. Thanks we really appreciated the effort and the quality – it made the night complete!', 'Jerry Marwood, Managing Director, SPAR (UK) Limited', 'Corporate' ],
+    2: [ 'A real good night for our hundreds of our employees.  Keep on-a rockin\'!!!', 'Steve Painter (Bayer Director)', 'Corporate' ],
+    3: [ 'I think that you are the best Soul band in the UK and I have looked at a lot!', 'Andy, Green Roadshow, Glastonbury ', 'Corporate' ],
+    4: [ 'You are a funky mother ! ! !  And I know where to go should I need a horn section, GOOD stuff.', 'Bill Pearson, Parrot Records', 'Corporate' ],
+    5: [ 'Just as note to say thank you and the boys for entertaining us so well on Saturday night. The comments I’ve received from staff have been most complimentary, and you certainly added to the wonderful atmosphere', 'Jenny Allison, Balls Brothers', 'Corporate' ],
+    6: [ 'Headliners are Soulpower who’ve built a following for their soul/funk/blues and should go down a storm', 'Music Extra Magazine', 'Corporate' ],
+    7: [ 'Soulpower, Still the biggest and best traditional soul Band we know about, Dave and the gang guarantee a proper Friday night of dance -till-you drop-drop and sing yourself hoarse. No band is better for sheer fun and exuberance.', 'The Boat Race', 'Corporate' ],
+    8: [ 'Hope you were happy with last nights gig. I thought your band were very tight, and it was very enjoyable both to engineer and listen to.', 'Alan Foss (Alan Foss Technical Services)', 'Corporate' ],
+    9: [ 'Just to say thank you to all the Band members for their professional performance on and off stage. Contact you soon regarding future bookings.', 'John HSCP', 'Corporate' ],
+    11: [ 'Many thanks for all your hard work on Saturday. Please pass on our thanks to the band- the clients were very impressed.  Looking forward to working with Soul Power again in the future.', 'James WMC', 'Corporate' ],
+    12: [ 'I just wanted to say very many thanks for supporting CHASE at our Mardi Gras the other weekend. Soulpower performed brilliantly and people have said how much they enjoyed your music - we\'ve already had one enquiry looking to book you for an event . It was a great day. Everything went according to plan and came together just as we had envisaged it. Please pass on my thanks to the whole band and we wish you much success with Soulpower.', 'Sally Reeves', 'Corporate' ],
+    13: [ 'Thank you very much for all your efforts in ensuring a happy client and please pass on our thanks to everyone involved. Helpfulness: excellent Online info: excellent Efficiency: excellent Value : excellent Performance: excellent Everybody who attended the social event had a great time and said the band were the best that had ever been booked!  Definitely recommend!!', 'Debra, BROADMOOR HOSPITAL', 'Corporate' ],
+    14: [ 'Firstly, a massive thank you to you and your team for a fantastic job on Saturday. The evening was a great success, lots people have told me how much they enjoyed the band and DJ. And as I said at the time, the whole lighting and sound set-up was superb - a massive step-up from our previous events; really slick and professional.', 'Christopher Turner', 'Corporate' ],
+    15: [ 'Thank you so much for an excellent show. All the delegates thought you guys were incredible and many of them asked me for your details so hopefully a few more gigs will be coming your way.', 'Helen Mansfield Conference & Events Co-ordinator AVMA', 'Corporate' ],
+    16: [ 'I wanted to tell you that I thought you were absolutely superb!  We\'ve had nothing but compliments our guests and Sir Michael Bichard our Permanent Secretary thought you were all tremendous! Thanks for playing for us. I\'ll be in touch if ever I need you again.', 'Rani King MBE DfEE', 'Corporate' ],
+    17: [ 'You were outstanding, as expected. Many guests have commented how good the band was and how much they enjoyed the music. I look forward to hearing about the tour. I imagine I will see you at future events as people have asked for your details.  Thanks v much.', 'Andrew', 'Corporate' ],
+    18: [ 'Excelled our expectations - everyone at our event was very impressed by the performance', 'Lynne & John Rumbold, Royston IC Rumbold Plumbing & Heating', 'Corporate' ],
+    19: [ 'I wouldn\'t mind a quid for every time someone said to me \'Top band\' or The band were great\' etc. etc. since the WE You did great and we were dead chuffed to have you there. My vision of your overall effect & atmosphere was spot on. Please keep us posted as to any new dates & I\'ll hope to see you soon. Many thanks', 'Anthony Mann', 'Corporate' ],
+
+    20: [ 'This is a really fabulous band that sings great soul and Motown music. They are famous for keeping everyone on the dance floor and their choice of songs is guaranteed to appeal to guests of all ages.', 'Kathryn Lloyd Wedding Design', 'Wedding' ],
+    21: [ 'I saw the advert for Soul Power in Bride Magazine and went onto the website. Well what can I say... they got it goin\' on!', 'Donna Starr', 'Wedding' ],
+    23: [ 'Wow! You blew everyone away with your performance at our wedding. We knew you would be good but you were all incredible- we couldn\'t believe how you managed to keep everyone dancing all night! If a couple want the very best band and music - Soul Power is the only band to book.', 'Liz and James', 'Wedding' ],
+    24: [ 'You were absolutely brilliant…you guys What a fantastic band! Your music really was one of the highlights of our Wedding Day. Our guests have all complimented us on you so we must pass on our thanks! You deserved a bigger crowd! Thanks again.', 'Gemma and Chris', 'Wedding' ],
+    25:[ 'Back from our honeymoon now and I just wanted the thank you for your outstanding performance at our wedding! The band were absolutely superb – Many of our friends have specifically written with glowing praise of your talents, and we had a great evening! Many thanks again!.', 'Charlie', 'Wedding' ],
+    26:[ 'The feedback from the various guests has centred around Thanks for a brilliant gig! We have only just got back from honeymoon, but already the feedback has been great - you were all a big success!! I would be more than happy to enthusiastically recommend you to anyone so please feel free to use me as a reference if needed. Thanks for all your help - and I look forward to coming to see you play again soon! With best wishes.', 'Anne-Marie Grimwade', 'Wedding' ],
+    27:[ 'Two things – the speeches and Soulpower. Everyone has said how you good you were – from the youngn’s like us, through to the older guests – some of them were mid 70s and all got up and had a boogie. Several of the guests have requested details…if at any stage you have future clients who may like to speak to someone who has used you, then please feel free to get them to call me and I will give you a ringing endorsement! Many thanks again – you really made the wedding for us.', 'Nick', 'Wedding' ],
+    28:[ 'We would like to say a massive thank you to Soul Power band. They were fantastic, everyone enjoyed them and we hardly left the dancefloor. So many people commented on their performance....they just looked so professional.....so big thank you for making our wedding day so entertaining....we\'ve even had friends asking for their details. ….thank you for a fantastic night.', 'Helen & Sam Short, Savill Court Hotel & Spa', 'Wedding' ],
+    29:[ 'Thanks to The Soul Power Band for being so efficient and helpful when we needed a band for our wedding reception. The music was fantastic - all the guests commented on it. Just as important though were the logistics of booking, setting up around the other activities at the reception and the attitude and flexibility of the on the night which made the whole thing run smoothly. Would recommend without hesitation!', 'Nick and Caroline Gauntlett', 'Wedding' ],
+    30:[ 'I just wanted to say a huge \'thank you\' to you and the guys for the fantastic music. When we heard the demo CD we knew that you were definitely what we were looking for, but on the night you completely exceeded our expectations. Everyone has been commenting on how great you were. You really made the evening.', 'Katie & Michael', 'Wedding' ],
+    31:[ 'We really wanted to thank you and the band for the exceptional entertainment that we had at our wedding. We were really quite bowled over by the performance that evening and you helped to make our wedding a truly memorable experience. I think without exception all our friends and family have commented on the band during any post-wedding discussions. A certain friend of ours, who shall remain nameless, continues to this day to have photos of him strutting his stuff on the dance floor emailed and distributed around various websites - this from a man who at the age of 35 has never once been known to dance. A testament indeed to the fantastic vibe generated by Soul Power. Very many thanks again.', 'Louise & Ben', 'Wedding' ],
+    32:[ 'We wanted to thank you for the fantastic music and entertainment you provided at our wedding reception. So many of our guests commented on how brilliant you were and how much they enjoyed your music. The music was so good; I had to dance to it all night, despite my wedding dress having a big train, which made it rather more tricky. I didn’t want to miss out on any dancing!! We would highly recommend you to our friends! Thank you.', 'Kath and Andy Packham', 'Wedding' ],
+    33:[ 'Just got back from honeymoon and wanted to immediately write to thank you and the boys for such an amazing performance at our wedding. Soul Power really made the party happen and got everyone up dancing. We thoroughly enjoyed both of your sets and every song was a winner. All the band are so talented and even though I had seen you guys gig before I was so impressed by the whole show, you guys offer more than a gig, it\'s a production! Every single person had nothing but praise for Soul Power - you guys rock ! I have had a few enquiries from friends about booking you so I have given them the website address and your number. Thank you so much, it was just perfect.', 'Louise and Nick Sewell', 'Wedding' ],
+    34:[ 'Thank you for playing at our wedding.  Everyone had a great time and said that they thought the band were fantastic. You managed to get everyone dancing from the grannies to my 2 year old son, who now wants to play the trombone.  We\'re desperately trying to think of another occasion to celebrate so that we can book you again.  Please pass on our thanks to the other members of the band, especially your lead singer who really put everything into his performance.', 'Kate and George', 'Wedding' ],
+    35:[ 'You guys were so so so great! We had such a fabulous day and the band really were amazing. Off on honeymoon now but wanted to quickly say such a big thank you. We had so many compliments about the band - a couple of people want to book them so have passed on your details. The groove was real and we loved it - i danced so much. Thank all the boys they were fab.', 'Nick & Louise', 'Wedding' ],
+    36:[ 'Hiiiiiiiiiiiiii Dave, all my guests and danced the night away as the music was just tooooo good to sit down!!!!  you did us proud and we had such an amazing time, would do it all again tomorrow if we could!!!! we will be recommending you to anyone and everyone we can as the band put on a truly spectacular show, even the oldies and hard to pleaseies said they enjoyed the music so hats off to you all!!!! thanks again for a brilliant night.', 'Mr and Mrs Goss', 'Wedding' ],
+    37:[ 'Thank you so much for playing at our wedding, the whole band was absolutely fantastic, we\'re glad you enjoyed it too. Everybody said the next morning what a great band we had chosen, and needless to say there were a lot of people with aching muscles the next morning from dancing so much.', 'Vicki and Robby Elson', 'Wedding' ],
+    38:[ 'Thank you for organising the band to play for us.... we’re sure you realised how much everyone enjoyed themselves the music was fantastic.  Thanks for playing such an important role on our wedding day.', 'Helen and Graeme', 'Wedding' ],
+    39:[ 'Thank you so much for providing such an excellent entertainment for our special day!  Everyone agreed you were all brilliant.... Rock on!', 'Chris and Liat Thorne', 'Wedding' ],
+    40:[ 'Thanks very much for helping to make our wedding reception such as success - you have a hundred new fans', 'Teresa Jefferies', 'Wedding' ]
+
+  };
+
+  let testimonialSlide = document.querySelector('.fade');
+  console.log(testimonialSlide);
+
+  // Convert Object to Array
+  const testimonialsEntries = Object.entries(testimonials);
+  console.log(testimonialsEntries[0]);
+
+  // Declare empty var for innerHTML
+  let testimonialSlideInner = '';
+  // Loop all arrays from object
+  for( const [testimonials, values] of testimonialsEntries ) {
+    testimonialSlideInner += `
+    <div>
+      <p>${values[0]}</p>
+      <span>${values[1]}
+      <br/>
+      <br/>
+      ${values[2]}
+      </span>
+    </div>
+    `;
+  };
+
+  // Add loop result to var
+  testimonialSlide.innerHTML = testimonialSlideInner;
+
+  let total = $('.fade div').length; // get the number of slides
+  let rand = Math.floor( Math.random() * total ); // random number
+
+  $('.fade').slick({
+    arrows: false,
+    autoplay: true,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    adaptiveHeight: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: rand
+  });
+
+
+
 
 // check Page is Experience
 let experiencePage = document.querySelector('.experience');
@@ -886,6 +977,8 @@ if (ourSoundPage) {
 
 
   playHeader.onclick = function() {
+    audioPlayer.setAttribute('src', '../../assets/media/SweetSoulMusic.mp3');
+    audioPlayer.play();
     rotateVinyl.play();
     TweenLite.to(rotateVinyl, 2, {
       timeScale: 1,
@@ -894,6 +987,7 @@ if (ourSoundPage) {
 
 
   pauseHeader.onclick = function() {
+    audioPlayer.pause();
     TweenLite.to(rotateVinyl, 2, {
       timeScale: 0,
       onComplete: function() {
@@ -1017,7 +1111,7 @@ if (ourSoundPage) {
 
     otis_redding: ['HardToHandle', 'Hard To Handle', 'Otis Redding', 'The Immortal Otis Redding'],
 
-    james_brown: ['JBrownMix', 'Soul Power 74', 'James Brown', 'Instrumental'],
+    james_brown: ['JBrownMix', 'SoulPower 74', 'James Brown', 'Instrumental'],
 
     wild_cherry: ['FunkyMusic', 'Play That Funky Music', 'Wild Cherry', 'Wild Cherry'],
 
@@ -1079,12 +1173,21 @@ if (ourSoundPage) {
     $('.album-slick').slick({
       dots: true,
       infinite: true,
+      // initialSlide: 5,
       speed: 300,
       slidesToShow: 1,
       centerMode: true,
       focusOnSelect: true,
       variableWidth: true,
       arrows: false,
+      draggable: false,
+      // swipe: false,
+      // responsive: [{
+      //   breakpoint: 640,
+      //   settings: {
+      //     infinite: false,
+      //   }
+      // }]
     });
 
     // Get Remaining Variables after JS Builds HTML
@@ -1096,7 +1199,7 @@ if (ourSoundPage) {
     // console.log(playListItem);
     let playListLink = document.querySelectorAll('#playlist .album-cover > a');
     // console.log(playListLink);
-    let slickActive = document.querySelector('.slick-slide.slick-active li a');
+    let slickActive = document.querySelector('#playlist .slick-slide.slick-active li a');
     // console.log(slickActive);
     let albumCoverFirst = document.querySelector('.slick-slide.slick-active .album-cover-artwork');
     // console.log(albumCoverFirst);
@@ -1123,13 +1226,51 @@ if (ourSoundPage) {
     // Set Default audio track before clicked
     audioPlayer.setAttribute('src', slickActive);
     // Run loop for link count
-    for( let i = 0; i < playListLink.length; i ++ ) {
+    for( let i = 0; i < playListLink.length; i++ ) {
       // Add Eventlistener on click
       playListLink[i].addEventListener(inputType, function(e) {
         // Prevent Audio player loading
         e.preventDefault();
+
         // Set src of audio player to clicked link
-        audioPlayer.setAttribute('src', playListLink[i]);
+        // audioPlayer.setAttribute('src', playListLink[i]);
+
+        // Hook into native slick function 'afterChange'
+        $('.album-slick').on('afterChange', function(){
+          // console.log('slide changed');
+          // Reset Var on click/after change
+          let slickActive = document.querySelector('#playlist .slick-slide.slick-active li a');
+          audioPlayer.setAttribute('src', slickActive);
+          audioPlayer.play();
+
+          // Assign Seekbar to Active slide
+
+          // Get album art work div
+          let albumCover = $('.slick-current .album-cover-artwork')[0];
+          // console.log(albumCover);
+          for(let i = 0; i < playListItem.length; i ++) {
+            if( !playListItem[i].classList.contains('current-song') ) {
+              playListItem[i].classList.add('current-song');
+            } else {
+              playListItem[i].classList.remove('current-song');
+            }
+          }
+          if(albumCover.childElementCount < 2) {
+            // Create progress element and append to DOM
+            let progress = document.createElement('PROGRESS');
+            progress.setAttribute('id', 'seekbar');
+            progress.setAttribute('value', '0');
+            progress.setAttribute('max', '1');
+            albumCover.appendChild(progress);
+            // Play progress
+            $('#audioPlayer').on('timeupdate', function() {
+              $('.slick-current #seekbar').attr("value", this.currentTime / this.duration);
+            });
+
+          }
+
+        });
+
 
         // Change icon on play button
         if( playButtonIcon.classList.contains('fa-play-circle') ) {
@@ -1138,54 +1279,26 @@ if (ourSoundPage) {
         }
 
         // Finally, play newly set src
-        audioPlayer.play();
+        // audioPlayer.play();
 
       });
 
     }
-
-    // Assign Seekbar to Active slide
-
-    // Hook into native slick function 'afterChange'
-    $('.album-slick').on('afterChange', function(){
-      // console.log('slide changed');
-      // Get album art work div
-      let albumCover = $('.slick-current .album-cover-artwork')[0];
-      // console.log(albumCover);
-      for(let i = 0; i < playListItem.length; i ++) {
-        if( !playListItem[i].classList.contains('current-song') ) {
-          playListItem[i].classList.add('current-song');
-        }
-      }
-      if(albumCover.childElementCount < 2) {
-        // Create progress element and append to DOM
-        let progress = document.createElement('PROGRESS');
-        progress.setAttribute('id', 'seekbar');
-        progress.setAttribute('value', '0');
-        progress.setAttribute('max', '1');
-        albumCover.appendChild(progress);
-        // Play progress
-        $('#audioPlayer').on('timeupdate', function() {
-          $('.slick-current #seekbar').attr("value", this.currentTime / this.duration);
-        });
-
-      }
-
-    });
 
       let slickDots = document.querySelectorAll('.album-slick .slick-dots li');
       // console.log(slickDots);
 
       for(let i = 0; i < slickDots.length; i++) {
         slickDots[i].addEventListener('click', function() {
-          audioPlayer.setAttribute('src', playListLink[i]);
+          // audioPlayer.setAttribute('src', playListLink[i]);
+          let slickActive = document.querySelector('#playlist .slick-slide.slick-active li a');
+          audioPlayer.setAttribute('src', slickActive);
 
           // Change icon on play button
           if( playButtonIcon.classList.contains('fa-play-circle') ) {
             playButtonIcon.classList.remove('fa-play-circle');
             playButtonIcon.classList.add('fa-pause-circle');
           }
-
           audioPlayer.play();
         });
       }
@@ -1218,12 +1331,12 @@ if (ourSoundPage) {
 
 
 // What We Do Page header
-let whatWeDo = document.querySelector('.what-we-do');
-if(whatWeDo) {
+let contact = document.querySelector('.contact');
+if(contact) {
 
   // Loop for circlie
 
-  let whatWeDoMhImg = document.querySelector('.what-we-do > .masthead-images');
+  let contactMhImg = document.querySelector('.contact > .masthead-images');
 
   // Count of elements
   let circlieCount = 37;
@@ -1237,7 +1350,7 @@ if(whatWeDo) {
     `;
   };
 
-  whatWeDoMhImg.innerHTML = imgInner;
+  contactMhImg.innerHTML = imgInner;
 
 }
 
