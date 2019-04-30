@@ -55,11 +55,11 @@ $( document ).ready(function() {
   };
 
   let testimonialSlide = document.querySelector('.fade');
-  console.log(testimonialSlide);
+  // console.log(testimonialSlide);
 
   // Convert Object to Array
   const testimonialsEntries = Object.entries(testimonials);
-  console.log(testimonialsEntries[0]);
+  // console.log(testimonialsEntries[0]);
 
   // Declare empty var for innerHTML
   let testimonialSlideInner = '';
@@ -88,6 +88,7 @@ $( document ).ready(function() {
     autoplay: true,
     dots: false,
     infinite: true,
+    autoplaySpeed: 5000,
     speed: 500,
     fade: true,
     cssEase: 'linear',
@@ -1135,6 +1136,7 @@ if (ourSoundPage) {
 
     for(const [dukebox, values] of entries) {
     // console.log(dukebox[0], values[1]);
+    // Removed <h2>${dukebox[0], values[2]}</h2>
       dukeboxLoop += `<li class="current-song album-cover">
         <a href="../../assets/media/${dukebox[0], values[0]}.mp3">
         <div class="album-wrapper">
@@ -1151,7 +1153,7 @@ if (ourSoundPage) {
               <!-- album info -->
               <div class="cell shrink">
                 <p>${dukebox[0], values[1]}</p>
-                <h2>${dukebox[0], values[2]}</h2>
+
               </div>
               <!-- padding  bottom -->
               <div class="cell auto"></div>
@@ -1407,5 +1409,96 @@ function random(min, max) {
   }
 }
 
+let galleryPage = document.querySelector('.gallery');
+
+if (galleryPage) {
+
+  // Gallery Slide Show
+  let gallerySlider = document.querySelector('.gallery-slider');
+
+  // Array of Images
+  const galleryImages = [
+    'soulpower-gallery-1',
+    'soulpower-gallery-2',
+    'soulpower-gallery-3',
+    'soulpower-gallery-4',
+    'soulpower-gallery-5',
+    'soulpower-gallery-6',
+    'soulpower-gallery-7',
+    'soulpower-gallery-8',
+    'soulpower-gallery-9',
+    'soulpower-gallery-10',
+    'soulpower-gallery-11',
+    'soulpower-gallery-12',
+    'soulpower-gallery-13',
+    'soulpower-gallery-14',
+    'soulpower-gallery-15',
+    'soulpower-gallery-16',
+    'soulpower-gallery-17',
+    'soulpower-gallery-18',
+    'soulpower-gallery-19',
+    'soulpower-gallery-20',
+    'soulpower-gallery-21',
+    'soulpower-gallery-22',
+    'soulpower-gallery-23',
+    'soulpower-gallery-24',
+    'soulpower-gallery-25',
+    'soulpower-gallery-26',
+    'soulpower-gallery-27',
+    'soulpower-gallery-28',
+    'soulpower-gallery-29',
+    'soulpower-gallery-30',
+    'soulpower-gallery-31',
+    'soulpower-gallery-32',
+    'soulpower-gallery-33',
+    'soulpower-gallery-34',
+    'soulpower-gallery-35',
+    'soulpower-gallery-36',
+    'soulpower-gallery-37',
+    'soulpower-gallery-38',
+    'soulpower-gallery-39',
+    'soulpower-gallery-40',
+    'soulpower-gallery-41',
+    'soulpower-gallery-42',
+    'soulpower-gallery-43',
+    'soulpower-gallery-44',
+    'soulpower-gallery-45',
+    'soulpower-gallery-46',
+    'soulpower-gallery-47',
+    'soulpower-gallery-48',
+    'soulpower-gallery-49',
+    'soulpower-gallery-50',
+    'soulpower-gallery-51',
+    'soulpower-gallery-52',
+    'soulpower-gallery-53'
+  ];
+
+  // Declare empty var for innerHTML
+  let gallerySliderInner = '';
+
+  // Loop all arrays from object
+
+  for( let i = 1; i < galleryImages.length; i++ ) {
+    gallerySliderInner += `
+    <div>
+      <img src="../../assets/img/gallery/soulpower-gallery-${i}.jpg">
+    </div>
+    `;
+  };
+
+  // Add loop result to var
+  gallerySlider.innerHTML = gallerySliderInner;
+
+$('.gallery-slider').slick({
+  arrows: true,
+  autoplay: true,
+  dots: false,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  adaptiveHeight: true,
+});
+
+}
 
 });
