@@ -54,12 +54,15 @@ $( document ).ready(function() {
 
   };
 
+  let testimonialPage = document.querySelector('.testimonials');
+
+  if(!testimonialPage) {
+
+
   let testimonialSlide = document.querySelector('.fade');
-  // console.log(testimonialSlide);
 
   // Convert Object to Array
   const testimonialsEntries = Object.entries(testimonials);
-  // console.log(testimonialsEntries[0]);
 
   // Declare empty var for innerHTML
   let testimonialSlideInner = '';
@@ -80,15 +83,16 @@ $( document ).ready(function() {
   // Add loop result to var
   testimonialSlide.innerHTML = testimonialSlideInner;
 
+
   let total = $('.fade div').length; // get the number of slides
   let rand = Math.floor( Math.random() * total ); // random number
 
   $('.fade').slick({
-    arrows: false,
+    arrows: true,
     autoplay: true,
     dots: false,
     infinite: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 30000,
     speed: 500,
     fade: true,
     cssEase: 'linear',
@@ -99,6 +103,32 @@ $( document ).ready(function() {
   });
 
 
+  } else {
+
+    // Check for Testimonial page
+    let testimonialPageContent = document.querySelector('.testimonials-js');
+
+    let testimonialPageInner = '';
+
+    // Convert Object to Array
+    const testimonialsEntries = Object.entries(testimonials);
+
+    for( const [testimonials, values] of testimonialsEntries ) {
+      testimonialPageInner += `
+      <div class="cell">
+        <p>${values[0]}</p>
+        <span>${values[1]}
+        <br/>
+        <br/>
+        ${values[2]}
+        </span>
+      </div>
+      `;
+    };
+
+    testimonialPageContent.innerHTML = testimonialPageInner;
+
+  }
 
 
 // check Page is Experience
@@ -1096,13 +1126,13 @@ if (ourSoundPage) {
   // Object for Tracks and info
   const dukebox = {
 
-    stevie_wonder: ['SignedSealedDelivered', 'I\'m Yours!', 'Stevie Wonder', 'Signed, Sealed, Delivered'],
+    stevie_wonder: ['SignedSealedDelivered', 'Signed Sealed Delivered', 'Stevie Wonder', 'Signed, Sealed, Delivered'],
 
     wilson_pickett: ['6345789', '634-5789', 'Wilson Pickett',  'The Exciting Wilson Pickett'],
 
-    sam_dave: ['HoldOnImComing', 'Hold On, I\'m Comin\'', 'Sam & Dave', 'Hold On, I\'m Comin\'' ],
+    sam_dave: ['HoldOnImComing', 'Hold On, I\'m Coming', 'Sam & Dave', 'Hold On, I\'m Comin\'' ],
 
-    wilson_pickett_midnight: ['TheMidnightHour', 'The Midnight Hour', 'Wilson Pickett', 'The Exciting Wilson Pickett'],
+    wilson_pickett_midnight: ['TheMidnightHour', 'In The Midnight Hour', 'Wilson Pickett', 'The Exciting Wilson Pickett'],
 
     arthur_conley: ['SweetSoulMusic', 'Sweet Soul Music', 'Arthur Conley', 'Sweet Soul Music'],
 
@@ -1110,9 +1140,9 @@ if (ourSoundPage) {
 
     smokey_robinson: ['MyGirl', 'My Girl', 'Smokey Robinson', 'Time Out for Smokey Robinson & The Miracles'],
 
-    otis_redding: ['HardToHandle', 'Hard To Handle', 'Otis Redding', 'The Immortal Otis Redding'],
+    otis_redding: ['HardToHandle', 'Too Hard To Handle', 'Otis Redding', 'The Immortal Otis Redding'],
 
-    james_brown: ['JBrownMix', 'SoulPower 74', 'James Brown', 'Instrumental'],
+    james_brown: ['JBrownMix', 'SoulPower', 'James Brown', 'Instrumental'],
 
     wild_cherry: ['FunkyMusic', 'Play That Funky Music', 'Wild Cherry', 'Wild Cherry'],
 
@@ -1137,6 +1167,9 @@ if (ourSoundPage) {
     for(const [dukebox, values] of entries) {
     // console.log(dukebox[0], values[1]);
     // Removed <h2>${dukebox[0], values[2]}</h2>
+    // <div class="cell shrink">
+    //  <p><small>${dukebox[0], values[3]}</small>
+    // </div>
       dukeboxLoop += `<li class="current-song album-cover">
         <a href="../../assets/media/${dukebox[0], values[0]}.mp3">
         <div class="album-wrapper">
@@ -1152,14 +1185,12 @@ if (ourSoundPage) {
               <div class="cell auto"></div>
               <!-- album info -->
               <div class="cell shrink">
-                <p>${dukebox[0], values[1]}</p>
+                <h2>${dukebox[0], values[1]}</h2>
 
               </div>
               <!-- padding  bottom -->
               <div class="cell auto"></div>
-              <div class="cell shrink">
-                <p><small>${dukebox[0], values[3]}</small>
-              </div>
+
             </div>
           </div>
         </div>

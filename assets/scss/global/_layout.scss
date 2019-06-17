@@ -442,7 +442,7 @@ ul.slick-dots {
   margin-right: auto;
 }
 
-.masthead.faqs, .masthead.gallery {
+.masthead.faqs, .masthead.gallery, .masthead.testimonials {
   background-image:url('../../assets/img/soul-power-faqs-m.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -461,6 +461,10 @@ ul.slick-dots {
     background-image:url('../../assets/img/soul-power-gallery.jpg');
   }
 
+}
+
+.masthead.testimonials {
+  background-image:url('../../assets/img/gallery/soulpower-gallery-30.jpg');
 }
 
 .footer {
@@ -537,7 +541,30 @@ h1#decadesOfExperience {
 
 // Testimonial
 
-.fade {
+.fade, .testimonials-js {
+
+    .slick-prev {
+        @include breakpoint(small only) {
+            left: 0;
+        }
+        &::before {
+            content: "\f0a8";
+            font-family: 'font awesome 5 free'!important;
+            font-weight: 900;
+        }
+    }
+
+    .slick-next {
+        @include breakpoint(small only) {
+            right: 0;
+        }
+        &::before {
+            content: "\f0a9";
+            font-family: 'font awesome 5 free'!important;
+            font-weight: 900;
+        }
+    }
+
   p {
     text-align: center;
 

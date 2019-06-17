@@ -34,7 +34,7 @@ if( homePage ) {
 
 
 
-  // Loop for Presenting SoulPower
+  // Loop for Presenting 
 
   // let presenting = document.querySelector('.presenting');
   //
