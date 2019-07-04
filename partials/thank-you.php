@@ -9,5 +9,5 @@
   $recipient = "ellissutehall@gmail.com";
   $mailheader = "From: $email \r\n";
   mail( $recipient, $subject, $formcontent ) or die ("Error!");
-  header( "refresh:1; url=https://dev.soulpower.biz/thank-you.html" );
+  header( "refresh:1; url=https://www.soulpower.biz/thank-you.html" );
 ?>
