@@ -1,52 +1,74 @@
 <div class="section-secondary">
   <div class="grid-container grid-padding-y grid-y height-vh">
     <!-- masthead padding  top -->
-    <div class="cell auto">
-    </div>
+    <div class="cell auto"></div>
     <!-- masthead centered content top -->
     <div class="cell shrink text-center">
       <p class="info-text"><small>Get In Touch</small></p>
       <div class="devide-secondary"></div>
       <h2 class="h1">Use the form below for a quote or an inquiry</h2>
 
-      <form data-abide novalidate action="thank-you.php" method="POST">
+      <form data-abide novalidate action="submit.php" method="POST">
         <div data-abide-error class="alert callout" style="display: none;">
           <p><i class="fi-alert"></i> There are some errors in your form.</p>
         </div>
         <div class="grid-container">
           <div class="grid-x grid-margin-x grid-padding-y">
             <div class="cell small-12 medium-6">
-              <input name="fname" type="text" placeholder="First Name *" required>
+              <input
+                name="fname"
+                type="text"
+                placeholder="First Name *"
+                required
+              />
             </div>
             <div class="cell small-12 medium-6">
-              <input name="lname" type="text" placeholder="Last Name">
+              <input name="lname" type="text" placeholder="Last Name" />
             </div>
             <div class="cell medium-6">
-              <input name="email" type="email" placeholder="email@example.com *" required>
+              <input
+                name="email"
+                type="email"
+                placeholder="email@example.com *"
+                required
+              />
             </div>
             <div class="cell small-12 medium-6">
-              <input name="phone" type="tel" placeholder="Contact Number">
+              <input name="phone" type="tel" placeholder="Contact Number" />
             </div>
             <div class="cell">
-              <input name="subject" type="text" placeholder="Subject *" required>
+              <input
+                name="subject"
+                type="text"
+                placeholder="Subject *"
+                required
+              />
             </div>
             <div class="cell small-12 medium-12">
-              <textarea name="message" rows="8" cols="80" placeholder="Message *" required></textarea>
+              <textarea
+                name="message"
+                rows="8"
+                cols="80"
+                placeholder="Message *"
+                required
+              ></textarea>
             </div>
             <div class="cell">
-              <input class="button" name="submitform" type="submit" value="Send">
+              <input
+                class="button"
+                name="submitform"
+                type="submit"
+                value="Send"
+              />
             </div>
           </div>
         </div>
       </form>
-
     </div>
     <!-- masthead padding  bottom -->
-    <div class="cell auto">
-    </div>
+    <div class="cell auto"></div>
     <div class="cell shrink">
       <div class="page-down shrink"></div>
     </div>
   </div>
-
 </div>
